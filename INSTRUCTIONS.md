@@ -22,3 +22,23 @@ CREATE TABLE "user" (
 - Run `npm run server`
 - Run `npm run client`
 - Navigate to `localhost:3000`
+
+## Git Branching Cheatsheet
+
+- `git checkout main` - make sure you're on the main branch
+- `git pull origin main` - make sure you're up to date
+- `git branch FEATURE-NAME` - create a branch (replace FEATURE-NAME with your feature)
+- `git branch` - display the branch you're currently on
+- `git checkout FEATURE-NAME` - switch to the branch (e.g. `git checkout main` to switch to main branch)
+
+- commit as many times as you need as you build your feature
+- `git add .`
+- `git commit -m "message"`
+
+- push your feature when you are ready for review
+- `git push origin FEATURE-NAME`
+- navigate to repo on GitHub and create pull request
+- base: main <- compare: FEATURE-NAME
+- click `create pull request`
+
+- notify team so somebody can review and merge!
