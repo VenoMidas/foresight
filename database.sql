@@ -17,6 +17,9 @@ CREATE TABLE "section" (
 	"section" VARCHAR(255)
 );
 
+INSERT INTO "section" ("section")
+VALUES ('Introduction'), ('Team'), ('Business Model'), ('Product and Market'), ('IP and Legal');
+
 -- question
 CREATE TABLE "question" (
 	"id" SERIAL PRIMARY KEY,
