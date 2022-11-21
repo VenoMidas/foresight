@@ -62,12 +62,22 @@ function App() {
             <HomePage />
           </ProtectedRoute>
 
+          {/* Info Page */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
             path="/info"
           >
             <InfoPage />
+          </ProtectedRoute>
+
+          {/* Founder Profile */}
+          <ProtectedRoute
+            // logged in shows FounderProfile else shows LoginPage
+            exact
+            path="/founder/profile/:id"
+          >
+            <FounderProfile />
           </ProtectedRoute>
 
           {/* NON-PROTECTED ROUTES */}
@@ -98,6 +108,35 @@ function App() {
               // Otherwise, show the registration page
               <RegisterPage />
             }
+          </Route>
+
+          {/* Questionnaire Routes */}
+          <Route exact path="/start">
+            <Start />
+          </Route>
+
+          <Route exact path="/introduction">
+            <Introduction />
+          </Route>
+
+          <Route exact path="/team">
+            <Team />
+          </Route>
+
+          <Route exact path="/business/model">
+            <BusinessModel />
+          </Route>
+
+          <Route exact path="/product/market">
+            <ProductMarket />
+          </Route>
+
+          <Route exact path="/ip/legal">
+            <IPLegal />
+          </Route>
+
+          <Route exact path="/review">
+            <Review />
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
