@@ -19,6 +19,16 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import HomePage from '../HomePage/HomePage';
+import FounderProfile from '../FounderProfile/FounderProfile';
+// Questionnarie imports
+import Start from '../Start/Start';
+import Introduction from '../Introduction/Introduction';
+import Team from '../Team/Team';
+import BusinessModel from '../BusinessModel/BusinessModel';
+import ProductMarket from '../ProductMarket/ProductMarket';
+import IPLegal from '../IPLegal/IPLegal';
+import Review from '../Review/Review';
 
 import './App.css';
 
@@ -36,8 +46,8 @@ function App() {
       <div>
         <Nav />
         <Switch>
-          {/* Visiting localhost:3000 will redirect to localhost:3000/home */}
-          <Redirect exact from="/" to="/home" />
+          {/* Visiting localhost:3000 will redirect to localhost:3000/login */}
+          <Redirect exact from="/" to="/login" />
 
           {/* Visiting localhost:3000/about will show the about page. */}
           <Route
@@ -48,18 +58,21 @@ function App() {
             <AboutPage />
           </Route>
 
-          {/* For protected routes, the view could show one of several things on the same route.
-            Visiting localhost:3000/user will show the UserPage if the user is logged in.
+          {/* For PROTECTED ROUTES, the view could show one of several things on the same route.
+            Visiting localhost:3000/user will show the userPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
-            Even though it seems like they are different pages, the user is always on localhost:3000/user */}
+            Even though it seems like they are different pages, the user is always on localhost:3000/home */}
+          
+          {/* Home page */}
           <ProtectedRoute
-            // logged in shows UserPage else shows LoginPage
+            // logged in shows HomePage else shows LoginPage
             exact
             path="/user"
           >
-            <UserPage />
+            <HomePage />
           </ProtectedRoute>
 
+          {/* Info Page */}
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
@@ -68,6 +81,46 @@ function App() {
             <InfoPage />
           </ProtectedRoute>
 
+          {/* Founder Profile */}
+          <ProtectedRoute
+            // logged in shows FounderProfile else shows LoginPage
+            exact
+            path="/founder/profile/:id"
+          >
+            <FounderProfile />
+          </ProtectedRoute>
+
+          {/* Questionnaire Routes */}
+          <ProtectedRoute exact path="/start">
+            <Start />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/introduction">
+            <Introduction />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/team">
+            <Team />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/business/model">
+            <BusinessModel />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/product/market">
+            <ProductMarket />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/ip/legal">
+            <IPLegal />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/review">
+            <Review />
+          </ProtectedRoute>
+
+          {/* NON-PROTECTED ROUTES */}
+          {/* Login page */}
           <Route
             exact
             path="/login"
@@ -105,8 +158,8 @@ function App() {
               // redirect them to the /user page
               <Redirect to="/user" />
               :
-              // Otherwise, show the Landing page
-              <LandingPage />
+              // Otherwise, show the registration page
+              <LoginPage />
             }
           </Route>
 
