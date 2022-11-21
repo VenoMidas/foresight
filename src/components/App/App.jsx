@@ -19,6 +19,16 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import HomePage from '../HomePage/HomePage';
+import FounderProfile from '../FounderProfile/FounderProfile';
+// Questionnarie imports
+import Start from '../Start/Start';
+import Introduction from '../Introduction/Introduction';
+import Team from '../Team/Team';
+import BusinessModel from '../BusinessModel/BusinessModel';
+import ProductMarket from '../ProductMarket/ProductMarket';
+import IPLegal from '../IPLegal/IPLegal';
+import Review from '../Review/Review';
 
 import './App.css';
 
