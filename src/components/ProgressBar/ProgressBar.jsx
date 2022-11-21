@@ -5,7 +5,7 @@ import StepLabel from '@mui/material/StepLabel';
 
 const ProgressBar = ({ step }) => {
     // steps for progress bar
-    const steps = ['Start', 'Introduction', 'Team', 'Business Model', 'Product and Market', 'IP and Legal', 'Review'];
+    const steps = ['Introduction', 'Team', 'Business Model', 'Product and Market', 'IP and Legal', 'Review'];
 
     return (
         <Box sx={{ width: '100%' }}>
