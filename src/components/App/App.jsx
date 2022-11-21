@@ -59,15 +59,15 @@ function App() {
           </Route>
 
           {/* For PROTECTED ROUTES, the view could show one of several things on the same route.
-            Visiting localhost:3000/user will show the UserPage if the user is logged in.
+            Visiting localhost:3000/user will show the userPage if the user is logged in.
             If the user is not logged in, the ProtectedRoute will show the LoginPage (component).
-            Even though it seems like they are different pages, the user is always on localhost:3000/user */}
+            Even though it seems like they are different pages, the user is always on localhost:3000/home */}
           
           {/* Home page */}
           <ProtectedRoute
             // logged in shows HomePage else shows LoginPage
             exact
-            path="/home"
+            path="/user"
           >
             <HomePage />
           </ProtectedRoute>
@@ -90,6 +90,35 @@ function App() {
             <FounderProfile />
           </ProtectedRoute>
 
+          {/* Questionnaire Routes */}
+          <ProtectedRoute exact path="/start">
+            <Start />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/introduction">
+            <Introduction />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/team">
+            <Team />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/business/model">
+            <BusinessModel />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/product/market">
+            <ProductMarket />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/ip/legal">
+            <IPLegal />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/review">
+            <Review />
+          </ProtectedRoute>
+
           {/* NON-PROTECTED ROUTES */}
           {/* Login page */}
           <Route
@@ -99,7 +128,7 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect to the /user page
-              <Redirect to="/home" />
+              <Redirect to="/user" />
               :
               // Otherwise, show the login page
               <LoginPage />
@@ -113,40 +142,25 @@ function App() {
             {user.id ?
               // If the user is already logged in, 
               // redirect them to the /user page
-              <Redirect to="/home" />
+              <Redirect to="/user" />
               :
               // Otherwise, show the registration page
               <RegisterPage />
             }
           </Route>
 
-          {/* Questionnaire Routes */}
-          <Route exact path="/start">
-            <Start />
-          </Route>
-
-          <Route exact path="/introduction">
-            <Introduction />
-          </Route>
-
-          <Route exact path="/team">
-            <Team />
-          </Route>
-
-          <Route exact path="/business/model">
-            <BusinessModel />
-          </Route>
-
-          <Route exact path="/product/market">
-            <ProductMarket />
-          </Route>
-
-          <Route exact path="/ip/legal">
-            <IPLegal />
-          </Route>
-
-          <Route exact path="/review">
-            <Review />
+          <Route
+            exact
+            path="/home"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the registration page
+              <LoginPage />
+            }
           </Route>
 
           {/* If none of the other routes matched, we will show a 404. */}
