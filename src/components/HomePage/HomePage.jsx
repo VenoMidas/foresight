@@ -3,8 +3,11 @@ import React from 'react';
 function HomePage() {
   return (
     <div className="container">
-      <h2>Welcome!</h2>
-      <p>Here are the founders who have submitted their questionnaire.</p>
+      <center>
+        <h1>Welcome!</h1>
+        <h3>*Table With Name, Company, Submit Date, Valuation, Founder Report*</h3>
+        <p>Possible drop down with ability to filter table</p>
+      </center>
     </div>
   );
 }
