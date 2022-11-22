@@ -6,6 +6,7 @@ const {
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// Long term - how can automatically get choices based on section, not question number
 router.get('/introduction', rejectUnauthenticated, (req, res) => {
     let queryText = `SELECT * FROM "choice" WHERE "question_id" <= '5';`;
     pool.query(queryText).then((result) => {
