@@ -12,7 +12,7 @@ const ProgressBar = ({ step }) => {
             <Stepper activeStep={step - 1} alternativeLabel>
                 {steps.map((label) => {
                     return (
-                        <Step>
+                        <Step key={label}>
                             <StepLabel>{label}</StepLabel>
                         </Step>
                     );
