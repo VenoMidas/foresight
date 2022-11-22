@@ -14,7 +14,7 @@ const Introduction = () => {
     }, []);
 
     const getIntroductionQuestions = () => {
-        console.log('In getIntroductionQuestions');
+        // console.log('In getIntroductionQuestions');
         axios.get('/api/question/introduction')
             .then((response) => {
                 setIntroductionQuestions(response.data);
@@ -30,6 +30,7 @@ const Introduction = () => {
                 <ProgressBar step={1} />
                 <h2>Introduction</h2>
                 <p>Questions Here</p>
+                <p>{JSON.stringify(introductionQuestions)}</p>
                 <Button onClick={() => history.push('/start')}>Cancel</Button>
                 <Button onClick={() => history.push('/team')}>Continue</Button>
             </Box>
