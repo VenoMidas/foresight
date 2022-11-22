@@ -8,10 +8,12 @@ import TextField from '@mui/material/TextField';
 
 const Introduction = () => {
     const history = useHistory();
-    const [introductionQuestions, setIntroductionQuestions] = useState([])
+    const [introductionQuestions, setIntroductionQuestions] = useState([]);
+    const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
 
     useEffect(() => {
         getIntroductionQuestions();
+        getIntroductionQuestionChoices();
     }, []);
 
     const getIntroductionQuestions = () => {
@@ -21,7 +23,18 @@ const Introduction = () => {
                 setIntroductionQuestions(response.data);
             }).catch((error) => {
                 console.log(error);
-                alert('Something went wrong.')
+                alert('Something went wrong.');
+            });
+    };
+
+    const getIntroductionQuestionChoices = () => {
+        console.log('In getIntroductionQuestionChoices');
+        axios.get('/api/choice/introduction')
+            .then((response) => {
+                setIntroductionQuestionChoices(response.data);
+            }).catch((error) => {
+                console.log(error);
+                alert('Something went wrong.');
             });
     };
 
@@ -30,6 +43,7 @@ const Introduction = () => {
             <Box>
                 <ProgressBar step={1} />
                 <h2>Introduction</h2>
+                <p>{JSON.stringify(introductionQuestionChoices)}</p>
                 {introductionQuestions.map(question => {
                     return (
                         <div>
