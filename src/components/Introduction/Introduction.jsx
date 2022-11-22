@@ -78,7 +78,7 @@ const Introduction = () => {
                                     {introductionQuestionChoices.map(choice => {
                                         if (choice.question_id === question.id) {
                                             return (
-                                                <MenuItem key={choice.id}>{choice.choice}</MenuItem>
+                                                <MenuItem>{choice.choice}</MenuItem>
                                             )
                                         }
                                     })}
