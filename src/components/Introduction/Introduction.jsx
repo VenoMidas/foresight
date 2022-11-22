@@ -14,17 +14,23 @@ const Introduction = () => {
     const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
     const [response, setResponse] = useState('');
 
+    // Manually set section id on each page - could use section table on database to trigger in the future
+    // Manually setting question range - should use math later
+    const sectionId = 1;
+    const [low, setLow] = useState(1);
+    const [high, setHigh] = useState(5);
+
     useEffect(() => {
         getIntroductionQuestions();
-        getIntroductionQuestionChoices();
     }, []);
 
     // Get the questions
     const getIntroductionQuestions = () => {
         // console.log('In getIntroductionQuestions');
-        axios.get('/api/question/introduction')
+        axios.get(`/api/question/${sectionId}`)
             .then((response) => {
                 setIntroductionQuestions(response.data);
+                getIntroductionQuestionChoices();
             }).catch((error) => {
                 console.log(error);
                 alert('Something went wrong.');
@@ -33,8 +39,7 @@ const Introduction = () => {
 
     // Get the choices
     const getIntroductionQuestionChoices = () => {
-        // console.log('In getIntroductionQuestionChoices');
-        axios.get('/api/choice/introduction')
+        axios.get(`/api/choice/${low}/${high}`)
             .then((response) => {
                 setIntroductionQuestionChoices(response.data);
             }).catch((error) => {
@@ -44,6 +49,9 @@ const Introduction = () => {
     };
 
     // Get the responses - for later when we use POST
+
+
+
 
     return (
         <center>
