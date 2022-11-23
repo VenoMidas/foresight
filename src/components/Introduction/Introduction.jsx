@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import {useSelector} from 'react-redux';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -13,6 +14,7 @@ const Introduction = () => {
     const [introductionQuestions, setIntroductionQuestions] = useState([]);
     const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
     const [response, setResponse] = useState('');
+    const user = useSelector((store) => store.user);
 
     // Manually set section id on each page - could use section table on database to trigger in the future
     // Manually setting question range - should use math later
@@ -48,10 +50,16 @@ const Introduction = () => {
             });
     };
 
-    // Get the responses - for later when we use POST
-
-
-
+    const postIntroductionResponses = () => {
+        console.log('in postIntroductionResponses');
+        axios.post(`/api/response/${user.id}`, { data: `('1', 'Test Company', '${user.id}'), ('2', 'Test Name', '${user.id}'), ('3', 'Test Email', '${user.id}'), ('4', 'Test State', '${user.id}'), ('5', 'Test Website', '${user.id}')` })
+            .then(() => {
+                history.push('/team')
+            }).catch((error) => {
+                console.log(error);
+                alert('Something went wrong!');
+            });
+    };
 
     return (
         <center>
@@ -90,7 +98,7 @@ const Introduction = () => {
                 })}
                 <br />
                 <Button onClick={() => history.push('/start')}>Cancel</Button>
-                <Button onClick={() => history.push('/team')}>Continue</Button>
+                <Button onClick={() => postIntroductionResponses()}>Continue</Button>
             </Box>
         </center>
     )
