@@ -8,7 +8,7 @@
 }
 
 th {
-    background-color: grey;
+    background-color: #0c3d50;
     color: #ffffff;
     text-align: left;
 }
@@ -16,5 +16,9 @@ th {
 th, td {
     padding: 12px 15px;
     border: 1px solid black;
+}
+
+h1 {
+    color: #0c3d50;
 }
 

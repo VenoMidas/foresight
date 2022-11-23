@@ -24,8 +24,8 @@ function HomePage() {
   return (
     <div className="container">
       <center>
-        <h1>Welcome!</h1>
-        <Button variant="outlined" onClick={handleClickOpen}>Invite a Founder</Button>
+        <h1>#Welcome!</h1>
+        <Button style={{ backgroundColor: '#1cefb9', color: '#0c3d50'}} onClick={handleClickOpen}>Invite a Founder</Button>
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle>Invite a Founder</DialogTitle>
           <DialogContent>
@@ -44,7 +44,7 @@ function HomePage() {
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} color="error">Cancel</Button>
-            <Button onClick={handleClose} color="success">Invite</Button>
+            <Button onClick={handleClose} style={{ color: '#0c3d50'}}>Invite</Button>
           </DialogActions>
         </Dialog>
         <br />
@@ -61,14 +61,14 @@ function HomePage() {
             <td>Foresight</td>
             <td>08/26/2022 11:00</td>
             <td>$10M</td>
-            <td><Button>View</Button><Button><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
           </tr>
           <tr>
             <td>Meaghan</td>
             <td>Prime</td>
             <td>11/23/2022 11:19</td>
             <td>$15M</td>
-            <td><Button>View</Button><Button><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
           </tr>
         </table>
       </center>
