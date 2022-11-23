@@ -7,6 +7,7 @@ import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
+import DownloadIcon from '@mui/icons-material/Download';
 
 function HomePage() {
   const [open, setOpen] = useState(false);
@@ -60,14 +61,14 @@ function HomePage() {
             <td>Foresight</td>
             <td>08/26/2022 11:00</td>
             <td>$10M</td>
-            <td><Button>View</Button><Button>Download</Button></td>
+            <td><Button>View</Button><Button><DownloadIcon /></Button></td>
           </tr>
           <tr>
             <td>Meaghan</td>
             <td>Prime</td>
-            <td>11/23/22 11:19</td>
+            <td>11/23/2022 11:19</td>
             <td>$15M</td>
-            <td><Button>View</Button><Button>Download</Button></td>
+            <td><Button>View</Button><Button><DownloadIcon /></Button></td>
           </tr>
         </table>
       </center>
