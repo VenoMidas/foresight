@@ -10,6 +10,9 @@ import Select from '@mui/material/Select';
 
 const ProductMarket = () => {
     const history = useHistory();
+    const [productMarketQuestions, setproductMarketQuestions] = useState([]);
+    const [productMarketQuestionChoices, setproductMarketQuestionChoices] = useState([]);
+    const [response, setResponse] = useState('');
 
     return (
         <center>
