@@ -10,6 +10,15 @@ import Select from '@mui/material/Select';
 
 const IPLegal = () => {
     const history = useHistory();
+    const [ipLegalQuestions, setIpLegalQuestions] = useState([]);
+    const [ipLegalQuestionChoices, setIpLegalQuestionChoices] = useState([]);
+    const [response, setResponse] = useState('');
+
+    const sectionId = 4;
+    const [low, setLow] = useState(38);
+    const [high, setHigh] = useState(43);
+
+
 
     return (
         <center>

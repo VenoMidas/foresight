@@ -23,7 +23,7 @@ const ProductMarket = () => {
     }, []);
 
     const getProductMarketQuestions = () => {
-        // console.log('In getBusinessModelQuestions');
+        // console.log('In getProductMarketQuestions');
         axios.get(`/api/question/${sectionId}`)
             .then((response) => {
                 setProductMarketQuestions(response.data);
