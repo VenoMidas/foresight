@@ -14,7 +14,7 @@ const IPLegal = () => {
     const [ipLegalQuestionChoices, setIpLegalQuestionChoices] = useState([]);
     const [response, setResponse] = useState('');
 
-    const sectionId = 4;
+    const sectionId = 5;
     const [low, setLow] = useState(38);
     const [high, setHigh] = useState(43);
 
@@ -49,7 +49,39 @@ const IPLegal = () => {
             <Box>
                 <ProgressBar step={5} />
                 <h2>IP and Legal</h2>
-                <p>Questions Here</p>
+                {ipLegalQuestions.map(question => {
+                    let choiceCheck = false;
+                    for (let i = 0; i < ipLegalQuestionChoices.length; i++) {
+                        if (question.id === ipLegalQuestionChoices[i].question_id) {
+                            choiceCheck = true;
+                        }
+                    }
+                    return (
+                        <>
+                            <h4>{question.question}</h4>
+                            {choiceCheck ?
+                                <Select
+                                    value={response}
+                                    onChange={(event) => setResponse(event.target.value)}
+                                >
+                                    {ipLegalQuestionChoices.map(choice => {
+                                        if (choice.question_id === question.id) {
+                                            return (
+                                                <MenuItem>
+                                                    {choice.choice}
+                                                </MenuItem>
+                                            )
+                                        }
+                                    })}
+                                </Select>
+                                :
+                                <TextField></TextField>}
+                        </>
+                    )
+                })}
+                <br />
+
+
                 <Button onClick={() => history.push('/product/market')}>Back</Button>
                 <Button onClick={() => history.push('/review')}>Review</Button>
             </Box>
