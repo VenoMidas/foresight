@@ -47,9 +47,37 @@ const ProductMarket = () => {
     return (
         <center>
             <Box>
-                <ProgressBar step={4} />
-                <h2>Product and Market</h2>
-                <p>Questions Here</p>
+                {productMarketQuestions.map(question => {
+                    let choiceCheck = false;
+                    for (let i = 0; i < productMarketQuestionChoices.length; i++) {
+                        if (question.id === productMarketQuestionChoices[i].question_id) {
+                            choiceCheck = true;
+                        }
+                    }
+                    return (
+                        <>
+                            <h4>{question.question}</h4>
+                            {choiceCheck ?
+                                <Select
+                                    value={response}
+                                    onChange={(event) => setResponse(event.target.value)}
+                                >
+                                    {productMarketQuestionChoices.map(choice => {
+                                        if (choice.question_id === question.id) {
+                                            return (
+                                                <MenuItem>
+                                                    {choice.choice}
+                                                </MenuItem>
+                                            )
+                                        }
+                                    })}
+                                </Select>
+                                :
+                                <TextField></TextField>}
+                        </>
+                    )
+                })}
+                <br />
                 <Button onClick={() => history.push('/business/model')}>Back</Button>
                 <Button onClick={() => history.push('/ip/legal')}>Continue</Button>
             </Box>
