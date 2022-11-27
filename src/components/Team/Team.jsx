@@ -55,7 +55,6 @@ const Team = () => {
             <Box>
                 <ProgressBar step={2} />
                 <h2>Team</h2>
-                <p>Questions Here</p>
                 {teamQuestions.map(question => {
                     let choiceCheck = false;
                     for (let i = 0; i < teamQuestionChoices.length; i++) {

@@ -47,6 +47,8 @@ const ProductMarket = () => {
     return (
         <center>
             <Box>
+                <ProgressBar step={4} />
+                <h2>Product Market</h2>
                 {productMarketQuestions.map(question => {
                     let choiceCheck = false;
                     for (let i = 0; i < productMarketQuestionChoices.length; i++) {

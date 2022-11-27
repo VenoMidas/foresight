@@ -51,7 +51,6 @@ const BusinessModel = () => {
             <Box>
                 <ProgressBar step={3} />
                 <h2>Business Model</h2>
-                <p>Questions Here</p>
                 {businessModelQuestions.map(question => {
                     let choiceCheck = false;
                     for (let i = 0; i < businessModelQuestionChoices.length; i++) {
