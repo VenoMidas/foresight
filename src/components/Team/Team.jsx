@@ -25,7 +25,7 @@ const Team = () => {
 
     // Get team section questions
     const getTeamQuestions = () => {
-        // console.log('In getIntroductionQuestions');
+        // console.log('In getTeamQuestions');
         axios.get(`/api/question/${sectionId}`)
             .then((response) => {
                 setTeamQuestions(response.data);
