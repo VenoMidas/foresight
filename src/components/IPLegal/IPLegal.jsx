@@ -18,7 +18,31 @@ const IPLegal = () => {
     const [low, setLow] = useState(38);
     const [high, setHigh] = useState(43);
 
+    useEffect(() => {
+        getIpLegalQuestions();
+    }, []);
 
+    const getIpLegalQuestions = () => {
+        // console.log('In getIpLegalQuestions');
+        axios.get(`/api/question/${sectionId}`)
+            .then((response) => {
+                setIpLegalQuestions(response.data);
+                getIpLegalQuestionChoices();
+            }).catch((error) => {
+                console.log(error);
+                alert('Something went wrong.');
+            });
+    };
+
+    const getIpLegalQuestionChoices = () => {
+        axios.get(`/api/choice/${low}/${high}`)
+            .then((response) => {
+                setIpLegalQuestionChoices(response.data);
+            }).catch((error) => {
+                console.log(error);
+                alert('Something went wrong.');
+            });
+    };
 
     return (
         <center>
