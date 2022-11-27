@@ -1,7 +1,12 @@
 import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
 
 const ProductMarket = () => {
     const history = useHistory();
