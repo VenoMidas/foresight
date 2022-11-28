@@ -48,7 +48,8 @@ function HomePage() {
           </DialogActions>
         </Dialog>
         <br />
-        <table class="home-table">
+        <table className="home-table">
+          <tbody>
           <tr>
             <th>Name</th>
             <th>Company</th>
@@ -70,6 +71,7 @@ function HomePage() {
             <td>$15M</td>
             <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
           </tr>
+          </tbody>
         </table>
       </center>
     </div>
