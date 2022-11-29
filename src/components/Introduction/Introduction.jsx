@@ -1,7 +1,7 @@
-import { useHistory } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -11,7 +11,10 @@ import Select from '@mui/material/Select';
 
 const Introduction = () => {
     const history = useHistory();
-    const [introductionQuestions, setIntroductionQuestions] = useState([]);
+    const dispatch = useDispatch();
+    const { id } = useParams();
+    const questions = useSelector(store => store.questions.questions);
+    // const [introductionQuestions, setIntroductionQuestions] = useState([]);
     const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
     const [response, setResponse] = useState('');
     const user = useSelector((store) => store.user);
@@ -26,40 +29,43 @@ const Introduction = () => {
         getIntroductionQuestions();
     }, []);
 
-    // Get the questions
+    // // Get the questions
+    // const getIntroductionQuestions = () => {
+    //     // console.log('In getIntroductionQuestions');
+    //     axios.get(`/api/question/${sectionId}`)
+    //         .then((response) => {
+    //             setIntroductionQuestions(response.data);
+    //             getIntroductionQuestionChoices();
+    //         }).catch((error) => {
+    //             console.log(error);
+    //             alert('Something went wrong.');
+    //         });
+    // };
     const getIntroductionQuestions = () => {
-        // console.log('In getIntroductionQuestions');
-        axios.get(`/api/question/${sectionId}`)
-            .then((response) => {
-                setIntroductionQuestions(response.data);
-                getIntroductionQuestionChoices();
-            }).catch((error) => {
-                console.log(error);
-                alert('Something went wrong.');
-            });
-    };
+        dispatch({ type: 'FETCH_QUESTIONS', payload: { sectionId } });
+    }
 
-    // Get the choices
-    const getIntroductionQuestionChoices = () => {
-        axios.get(`/api/choice/${low}/${high}`)
-            .then((response) => {
-                setIntroductionQuestionChoices(response.data);
-            }).catch((error) => {
-                console.log(error);
-                alert('Something went wrong.');
-            });
-    };
+    // // Get the choices
+    // const getIntroductionQuestionChoices = () => {
+    //     axios.get(`/api/choice/${low}/${high}`)
+    //         .then((response) => {
+    //             setIntroductionQuestionChoices(response.data);
+    //         }).catch((error) => {
+    //             console.log(error);
+    //             alert('Something went wrong.');
+    //         });
+    // };
 
-    const postIntroductionResponses = () => {
-        console.log('in postIntroductionResponses');
-        axios.post(`/api/response/${user.id}`, { data: `('1', 'Test Company', '${user.id}'), ('2', 'Test Name', '${user.id}'), ('3', 'Test Email', '${user.id}'), ('4', 'Test State', '${user.id}'), ('5', 'Test Website', '${user.id}')` })
-            .then(() => {
-                history.push('/team')
-            }).catch((error) => {
-                console.log(error);
-                alert('Something went wrong!');
-            });
-    };
+    // const postIntroductionResponses = () => {
+    //     console.log('in postIntroductionResponses');
+    //     axios.post(`/api/response/${user.id}`, { data: `('1', 'Test Company', '${user.id}'), ('2', 'Test Name', '${user.id}'), ('3', 'Test Email', '${user.id}'), ('4', 'Test State', '${user.id}'), ('5', 'Test Website', '${user.id}')` })
+    //         .then(() => {
+    //             history.push('/team')
+    //         }).catch((error) => {
+    //             console.log(error);
+    //             alert('Something went wrong!');
+    //         });
+    // };
 
     return (
         <center>
@@ -67,7 +73,7 @@ const Introduction = () => {
                 <ProgressBar step={1} />
                 <h2>Introduction</h2>
                 <p>On refresh, we get an "Each child in a list" key error for the Progress Bar and page - doesn't happen on normal access of page</p>
-                {introductionQuestions.map(question => {
+                {questions.map(question => {
                     // check if question.id matches a choice.question_id
                     let choiceCheck = false;
                     for (let i = 0; i < introductionQuestionChoices.length; i++) {
