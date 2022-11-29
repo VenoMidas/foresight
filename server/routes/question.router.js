@@ -15,4 +15,15 @@ router.get('/:id', rejectUnauthenticated, (req, res) => {
   });
 });
 
+// GET route for Introduction page
+router.get('/', rejectUnauthentiated, (req, res) => {
+  console.log('In Introduction GET request');
+  let queryText = `SELECT * FROM "question" WHERE "section_id" = 1 ORDER BY "position" ASC;`;
+  pool.query(queryText).then((result) => {
+    res.send(result.rows);
+  }).catch((error) => {
+    res.sendStatus(500);
+  });
+});
+
 module.exports = router;
