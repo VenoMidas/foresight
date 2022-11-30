@@ -53,6 +53,7 @@ const Introduction = () => {
             });
     };
 
+    // This could be moved to the server down the road
     const handleResponseList = (questionObjectArray) => {
         // call response list outside of loop
         const responseListCopy = [...responseList];
