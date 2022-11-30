@@ -21,32 +21,39 @@ router.get('/:id', (req, res) => {
 });
 
 // Original POST
-router.post('/:id', rejectUnauthenticated, (req, res,) => {
-    const data = req.body.data;
-    console.log('This is the body.data', data);
+// router.post('/:id', rejectUnauthenticated, (req, res,) => {
+//     const data = req.body.data;
+//     console.log('This is the body.data', data);
 
-    const queryText = `INSERT INTO "response" (question_id, response, user_id)
-                       VALUES ${data};`;
-    pool.query(queryText)
-        .then(() => res.sendStatus(201))
-        .catch((error) => {
-            console.log('response POST failed', error);
-            res.sendStatus(500);
-        });
-});
+//     const queryText = `INSERT INTO "response" (question_id, response, user_id)
+//                        VALUES ${data};`;
+//     pool.query(queryText)
+//         .then(() => res.sendStatus(201))
+//         .catch((error) => {
+//             console.log('response POST failed', error);
+//             res.sendStatus(500);
+//         });
+// });
 
-// optional POST response 
-router.post('/', (req, res) => {
-    // maybe use a for loop here? to automatically see how many questions/responses there are
-    let queryText =  `INSERT INTO "response" ("question_id", "response", "user_id")
-                      VALUES ($1, $2, $3);`;
-    pool.query(queryText, [req.params.id, req.body.response, req.user.id])
-    .then((result) => {
-        res.sendStatus(200);
-    }).catch((error) => {
-        console.log(error);
+router.post('/:id', rejectUnauthenticated, async (req, res) => {
+    try {
+        const response = req.body.response;
+        console.log(response);
+        // todo: add Begin, Rollback, and Commit
+        for (let i = 0; i < response.length; i += 1) {
+            let queryText = `INSERT INTO "response" (question_id, response, user_id)
+                             VALUES ($1, $2, $3);`;
+            await pool.query(queryText, [
+                response[i].question_id,
+                response[i].response,
+                req.params.id,
+            ])
+        };
+        res.sendStatus(201);
+    } catch (e) {
+        console.log('response for loop POST failed', error);
         res.sendStatus(500);
-    });
+    }
 });
 
 

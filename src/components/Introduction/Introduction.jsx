@@ -15,6 +15,7 @@ const Introduction = () => {
     const [introductionQuestions, setIntroductionQuestions] = useState([]);
     const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
     const [response, setResponse] = useState('');
+    const [responseList, setResponseList] = useState([]);
     const user = useSelector((store) => store.user);
 
     // Manually set section id on each page - could use section table on database to trigger in the future
@@ -33,6 +34,7 @@ const Introduction = () => {
         axios.get(`/api/question/${sectionId}`)
             .then((response) => {
                 setIntroductionQuestions(response.data);
+                handleResponseList(response.data);
                 getIntroductionQuestionChoices();
             }).catch((error) => {
                 console.log(error);
@@ -50,6 +52,19 @@ const Introduction = () => {
                 alert('Something went wrong.');
             });
     };
+
+    const handleResponseList = (questionObjectArray) => {
+        // call response list outside of loop
+        const responseListCopy = [...responseList];
+        for (let i = 0; i < questionObjectArray.length; i += 1) {
+            responseListCopy.push({ question_id: questionObjectArray[i].id, response: "" })
+            // responseListCopy = [...responseListCopy, { question_id: questionObjectArray[i].id, response: "" }];
+            // setResponseList([...responseList, { question_id: questionObjectArray[i].id, response: "" }]);
+        }
+        setResponseList(responseListCopy);
+    };
+
+    console.log('this is the response list', responseList);
 
     const postIntroductionResponses = () => {
         console.log('in postIntroductionResponses');
