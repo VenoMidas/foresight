@@ -101,8 +101,8 @@ const Team = () => {
                                 <h4>{question.question}</h4>
                                 {choiceCheck ?
                                     <Select
-                                        name={question.id - 1}
-                                        value={responseList[question.id - 1].response}
+                                        name={question.id - 6}
+                                        value={responseList[question.id - 6].response}
                                         onChange={handleResponseListChange}
                                     >
                                         {teamQuestionChoices.map(choice => {
@@ -115,7 +115,7 @@ const Team = () => {
                                     </Select>
                                     :
                                     <TextField
-                                        name={question.id - 1}
+                                        name={question.id - 6}
                                         onChange={handleResponseListChange}
                                     >   
                                     </TextField>}
