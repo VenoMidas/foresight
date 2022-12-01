@@ -58,25 +58,32 @@ const Introduction = () => {
         // call response list outside of loop
         const responseListCopy = [...responseList];
         for (let i = 0; i < questionObjectArray.length; i += 1) {
-            responseListCopy.push({ question_id: questionObjectArray[i].id, response: "" })
-            // responseListCopy = [...responseListCopy, { question_id: questionObjectArray[i].id, response: "" }];
-            // setResponseList([...responseList, { question_id: questionObjectArray[i].id, response: "" }]);
+            responseListCopy.push({ question_id: questionObjectArray[i].id, response: '' })
         }
         setResponseList(responseListCopy);
     };
 
     console.log('this is the response list', responseList);
 
-    const postIntroductionResponses = () => {
-        console.log('in postIntroductionResponses');
-        axios.post(`/api/response/${user.id}`, { data: `('1', 'Test Company', '${user.id}'), ('2', 'Test Name', '${user.id}'), ('3', 'Test Email', '${user.id}'), ('4', 'Test State', '${user.id}'), ('5', 'Test Website', '${user.id}')` })
-            .then(() => {
-                history.push('/team')
-            }).catch((error) => {
-                console.log(error);
-                alert('Something went wrong!');
-            });
-    };
+    // handleChange
+    const handleResponseListChange = (event, index) => {
+        console.log('on change event', event.target.name);
+        const { name, value } = event.target;
+        const responseListCopy = [...responseList];
+        responseListCopy[name].response = value;
+        setResponseList(responseListCopy);
+    }
+
+    // const postIntroductionResponses = () => {
+    //     console.log('in postIntroductionResponses');
+    //     axios.post(`/api/response/${user.id}`, { data: `('1', 'Test Company', '${user.id}'), ('2', 'Test Name', '${user.id}'), ('3', 'Test Email', '${user.id}'), ('4', 'Test State', '${user.id}'), ('5', 'Test Website', '${user.id}')` })
+    //         .then(() => {
+    //             history.push('/team')
+    //         }).catch((error) => {
+    //             console.log(error);
+    //             alert('Something went wrong!');
+    //         });
+    // };
 
     return (
         <center>
@@ -97,28 +104,34 @@ const Introduction = () => {
                             <h4>{question.question}</h4>
                             {choiceCheck ?
                                 <Select
-                                    value={response}
-                                    onChange={(event) => setResponse(event.target.value)}
+                                    name={question.id - 1}
+                                    value={responseList[question.id - 1].response}
+                                    onChange={handleResponseListChange}
                                 >
                                     {introductionQuestionChoices.map(choice => {
                                         if (choice.question_id === question.id) {
                                             return (
-                                                <MenuItem>{choice.choice}</MenuItem>
+                                                <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
                                             )
                                         }
                                     })}
                                 </Select>
                                 :
-                                <TextField></TextField>}
+                                <TextField
+                                    name={question.id - 1}
+                                    onChange={handleResponseListChange}
+                                >
+                                </TextField>}
                         </>
                     )
                 })}
                 <br />
                 <Button onClick={() => history.push('/start')}>Cancel</Button>
-                <Button onClick={() => postIntroductionResponses()}>Continue</Button>
+                <Button onClick={() => history.push('/team')}>Continue</Button>
             </Box>
         </center>
     )
 }
 
 export default Introduction;
+
