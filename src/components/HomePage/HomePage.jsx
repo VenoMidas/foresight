@@ -18,7 +18,12 @@ function HomePage() {
 
   const handleClose = () => {
     setOpen(false);
-  }
+  };
+
+  const handleInvite = () => {
+    setOpen(false);
+    console.log('Send Email to supplied email address. Logout and navigate to localhost:3000/#/register/founder to register a founder');
+  };
 
 
   return (
@@ -44,7 +49,7 @@ function HomePage() {
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} color="error">Cancel</Button>
-            <Button onClick={handleClose} style={{ color: '#0c3d50'}}>Invite</Button>
+            <Button onClick={handleInvite} style={{ color: '#0c3d50'}}>Invite</Button>
           </DialogActions>
         </Dialog>
         <br />

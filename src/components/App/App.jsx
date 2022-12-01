@@ -15,6 +15,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from '../HomePage/HomePage';
 import FounderProfile from '../FounderProfile/FounderProfile';
+import RegisterFounderPage from '../RegisterFounder/RegisterFounderPage';
 // Questionnarie imports
 import Start from '../Start/Start';
 import Introduction from '../Introduction/Introduction';
@@ -140,6 +141,20 @@ function App() {
               :
               // Otherwise, show the registration page
               <RegisterPage />
+            }
+          </Route>
+
+          <Route
+            exact
+            path="/register/founder"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the registration page
+              <RegisterFounderPage />
             }
           </Route>
 

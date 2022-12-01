@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-function RegisterForm() {
+function RegisterFounderForm() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const errors = useSelector((store) => store.errors);
@@ -15,14 +15,14 @@ function RegisterForm() {
       payload: {
         username: username,
         password: password,
-        accessGroup: "CDFI"
+        accessGroup: "FOUNDER"
       },
     });
   }; // end registerUser
 
   return (
     <form className="formPanel" onSubmit={registerUser}>
-      <h2>Register CDFI</h2>
+      <h2>Register Founder</h2>
       {errors.registrationMessage && (
         <h3 className="alert" role="alert">
           {errors.registrationMessage}
@@ -59,4 +59,4 @@ function RegisterForm() {
   );
 }
 
-export default RegisterForm;
+export default RegisterFounderForm;
