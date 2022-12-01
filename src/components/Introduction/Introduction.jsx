@@ -1,7 +1,7 @@
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -11,10 +11,8 @@ import Select from '@mui/material/Select';
 
 const Introduction = () => {
     const history = useHistory();
-    const dispatch = useDispatch();
     const [introductionQuestions, setIntroductionQuestions] = useState([]);
     const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
-    const [response, setResponse] = useState('');
     const [responseList, setResponseList] = useState([]);
     const user = useSelector((store) => store.user);
 
@@ -62,8 +60,6 @@ const Introduction = () => {
         }
         setResponseList(responseListCopy);
     };
-
-    // console.log('this is the response list', responseList);
 
     // handleChange
     const handleResponseListChange = (event, index) => {
