@@ -1,6 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -12,7 +13,8 @@ const Introduction = () => {
     const history = useHistory();
     const [introductionQuestions, setIntroductionQuestions] = useState([]);
     const [introductionQuestionChoices, setIntroductionQuestionChoices] = useState([]);
-    const [response, setResponse] = useState('');
+    const [responseList, setResponseList] = useState([]);
+    const user = useSelector((store) => store.user);
 
     // Manually set section id on each page - could use section table on database to trigger in the future
     // Manually setting question range - should use math later
@@ -30,6 +32,7 @@ const Introduction = () => {
         axios.get(`/api/question/${sectionId}`)
             .then((response) => {
                 setIntroductionQuestions(response.data);
+                handleResponseList(response.data);
                 getIntroductionQuestionChoices();
             }).catch((error) => {
                 console.log(error);
@@ -48,17 +51,43 @@ const Introduction = () => {
             });
     };
 
-    // Get the responses - for later when we use POST
+    // This could be moved to the server down the road
+    const handleResponseList = (questionObjectArray) => {
+        // call response list outside of loop
+        const responseListCopy = [...responseList];
+        for (let i = 0; i < questionObjectArray.length; i += 1) {
+            responseListCopy.push({ question_id: questionObjectArray[i].id, response: '' })
+        }
+        setResponseList(responseListCopy);
+    };
 
+    // handleChange
+    const handleResponseListChange = (event, index) => {
+        console.log('on change event', event.target.name);
+        const { name, value } = event.target;
+        const responseListCopy = [...responseList];
+        responseListCopy[name].response = value;
+        setResponseList(responseListCopy);
+    }
 
-
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('in handleSubmit');
+        axios.post(`/api/response/${user.id}`, { data: responseList })
+            .then(() => {
+                history.push('/team')
+            }).catch((error) => {
+                console.log(error);
+                alert('Something went wrong!');
+            });
+    };
 
     return (
         <center>
             <Box>
                 <ProgressBar step={1} />
                 <h2>Introduction</h2>
-                <p>On refresh, we get an "Each child in a list" key error for the Progress Bar and page - doesn't happen on normal access of page</p>
+                <form onSubmit={handleSubmit}>
                 {introductionQuestions.map(question => {
                     // check if question.id matches a choice.question_id
                     let choiceCheck = false;
@@ -72,28 +101,35 @@ const Introduction = () => {
                             <h4>{question.question}</h4>
                             {choiceCheck ?
                                 <Select
-                                    value={response}
-                                    onChange={(event) => setResponse(event.target.value)}
+                                    name={question.id - 1}
+                                    value={responseList[question.id - 1].response}
+                                    onChange={handleResponseListChange}
                                 >
                                     {introductionQuestionChoices.map(choice => {
                                         if (choice.question_id === question.id) {
                                             return (
-                                                <MenuItem>{choice.choice}</MenuItem>
+                                                <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
                                             )
                                         }
                                     })}
                                 </Select>
                                 :
-                                <TextField></TextField>}
+                                <TextField
+                                    name={question.id - 1}
+                                    onChange={handleResponseListChange}
+                                >
+                                </TextField>}
                         </>
                     )
                 })}
                 <br />
                 <Button onClick={() => history.push('/start')}>Cancel</Button>
-                <Button onClick={() => history.push('/team')}>Continue</Button>
+                <Button type="submit">Continue</Button>
+                </form>
             </Box>
         </center>
     )
 }
 
 export default Introduction;
+

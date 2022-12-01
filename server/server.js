@@ -12,6 +12,7 @@ const userRouter = require('./routes/user.router');
 const questionRouter = require('./routes/question.router');
 const choiceRouter = require('./routes/choice.router');
 const emailRouter = require('./routes/email.router');
+const responseRouter = require('./routes/response.router');
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -29,6 +30,7 @@ app.use('/api/user', userRouter);
 app.use('/api/question', questionRouter);
 app.use('/api/choice', choiceRouter);
 app.use('/api/email', emailRouter);
+app.use('/api/response', responseRouter);
 
 // Serve static files
 app.use(express.static('build'));
