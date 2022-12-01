@@ -56,19 +56,23 @@ function Nav() {
           <List className="list"
           sx={{ justify: 'center'}}
           >
-            <Grid>
-            <Link to="/home">
-        <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
-      </Link>
-                <ListItemButton sx={{ anchor: 'right'}}>
-                <Link className="navLink" to='/user'>
-            home
+      <Grid container spacing={2}>
+        <Grid item md={4}>
+          <Link to="/home">
+           <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
           </Link>
-                  <ListItemIcon>
-                     <HomeIcon /> 
-                  </ListItemIcon>
+        </Grid>
+        <Grid item md={4}>
+          <ListItemButton sx={{ anchor: 'right'}}>
+            <Link className="navLink" to='/user'>
+              home
+            </Link>
+              <ListItemIcon>
+                <HomeIcon /> 
+              </ListItemIcon>
                   {/* <ListItemText primary={text} /> */}
-                </ListItemButton>
+          </ListItemButton>
+        </Grid>
                 <ListItemButton>
                 <Link className="navLink" to='/start'>
                 Founder Questionnaire
@@ -112,7 +116,7 @@ function Nav() {
           </List>
       </Drawer>
       
-
+        {/* DONT DELETE */}
       {/* <Link to="/home">
         <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
       </Link>
