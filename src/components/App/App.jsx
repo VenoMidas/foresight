@@ -64,7 +64,13 @@ function App() {
             exact
             path="/user"
           >
-            <HomePage />
+            {user.access_group === "CDFI" ?
+                // if user is a CDFI - display CDFI home page
+                <HomePage />
+                :
+                // Otherwise, show the founder home page
+                <Start />
+              }
           </ProtectedRoute>
 
           {/* Info Page */}
