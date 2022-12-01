@@ -15,6 +15,7 @@ function RegisterForm() {
       payload: {
         username: username,
         password: password,
+        accessGroup: "CDFI"
       },
     });
   }; // end registerUser
