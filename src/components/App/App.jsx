@@ -5,22 +5,19 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-
 import { useDispatch, useSelector } from 'react-redux';
-
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
-
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
-
 import AboutPage from '../AboutPage/AboutPage';
-import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
-import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from '../HomePage/HomePage';
 import FounderProfile from '../FounderProfile/FounderProfile';
+import RegisterFounderPage from '../RegisterFounder/RegisterFounderPage';
+import MvpReport from '../MvpReport/MvpReport';
+import CdfiDashboard from '../CdfiDashboard/CdfiDashboard';
 // Questionnarie imports
 import Start from '../Start/Start';
 import Introduction from '../Introduction/Introduction';
@@ -69,7 +66,13 @@ function App() {
             exact
             path="/user"
           >
-            <HomePage />
+            {user.access_group === "CDFI" ?
+                // if user is a CDFI - display CDFI home page
+                <HomePage />
+                :
+                // Otherwise, show the founder home page
+                <Start />
+              }
           </ProtectedRoute>
 
           {/* Info Page */}
@@ -119,6 +122,14 @@ function App() {
             <Review />
           </ProtectedRoute>
 
+          <ProtectedRoute exact path="/mvpreport">
+            <MvpReport />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/cdfidashboard">
+            <CdfiDashboard />
+          </ProtectedRoute>
+
           {/* NON-PROTECTED ROUTES */}
           {/* Login page */}
           <Route
@@ -146,6 +157,20 @@ function App() {
               :
               // Otherwise, show the registration page
               <RegisterPage />
+            }
+          </Route>
+
+          <Route
+            exact
+            path="/register/founder"
+          >
+            {user.id ?
+              // If the user is already logged in, 
+              // redirect them to the /user page
+              <Redirect to="/user" />
+              :
+              // Otherwise, show the registration page
+              <RegisterFounderPage />
             }
           </Route>
 

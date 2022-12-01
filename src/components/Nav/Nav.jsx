@@ -1,136 +1,147 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import LogOutButton from '../LogOutButton/LogOutButton';
-import './Nav.css';
-import { useSelector } from 'react-redux';
-import Avatar from '@mui/material/Avatar';
-import foresightLogo from '../../images/logo.png';
-import Box from '@mui/material/Box';
-import Drawer from '@mui/material/Drawer';
-import CssBaseline from '@mui/material/CssBaseline';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
-import Grid from '@mui/material/Grid';
-import { color } from '@mui/system';
-import HomeIcon from '@mui/icons-material/Home';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import './Nav.css'
+import Avatar from '@mui/material/Avatar'
+import foresightLogo from '../../images/logo.png'
+import Drawer from '@mui/material/Drawer'
+import List from '@mui/material/List'
+import ListItemText from '@mui/material/ListItemText'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemIcon from '@mui/material/ListItemIcon'
+// icons
+import HomeIcon from '@mui/icons-material/Home'
+import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
+import InfoIcon from '@mui/icons-material/Info'
+import LogoutIcon from '@mui/icons-material/Logout'
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 
 function Nav() {
-  
   // Size of Drawer
-  const drawerWidth = 240;
+  const drawerWidth = 240
 
-
-  const user = useSelector((store) => store.user);
+  const dispatch = useDispatch()
+  const user = useSelector((store) => store.user)
 
   return (
-    <div className="nav">
-
-<AppBar  position="absolute" sx={{ zIndex: 'tooltip', width: 0, align: 'right' }}>
-        <Toolbar className='drawer'>
-          <Typography  variant="h6" noWrap component="div">
-          <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
-          </Typography>
-        </Toolbar>
-      </AppBar>
+    <div>
       <Drawer
         variant="permanent"
-        
         sx={{
           width: drawerWidth,
           flexShrink: 0,
-          [`& .MuiDrawer-paper`]: { width: drawerWidth, boxSizing: 'border-box', backgroundColor: '#0c3d50',
-          position: 'absolute', },
+          [`& .MuiDrawer-paper`]: {
+            width: drawerWidth,
+            boxSizing: 'border-box',
+            backgroundColor: '#0c3d50',
+            position: 'absolute',
+          },
         }}
       >
-        
-        
-          <List className="list"
-          sx={{ justify: 'center'}}
-          >
-      <Grid container spacing={2}>
-        <Grid item md={4}>
-          <Link to="/home">
-           <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
-          </Link>
-        </Grid>
-        <Grid item md={4}>
-          <ListItemButton sx={{ anchor: 'right'}}>
-            <Link className="navLink" to='/user'>
-              home
-            </Link>
-              <ListItemIcon>
-                <HomeIcon /> 
-              </ListItemIcon>
-                  {/* <ListItemText primary={text} /> */}
+        <List>
+          {/* All users see the foresight logo */}
+          <ListItemButton component={Link} to="/home">
+            <Avatar
+              src={foresightLogo}
+              sx={{ width: 70, height: 70 }}
+              style={{ borderRadius: 0, padding: 10 }}
+            />
           </ListItemButton>
-        </Grid>
-                <ListItemButton>
-                <Link className="navLink" to='/start'>
-                Founder Questionnaire
-          </Link>
-                  <ListItemIcon>
-                     <InboxIcon /> 
-                  </ListItemIcon>
-                  {/* <ListItemText primary={text} /> */}
-                </ListItemButton>
-                <ListItemButton>
-                <Link className="navLink" to='/about'>
-                About
-          </Link>
-                  <ListItemIcon>
-                     <InboxIcon /> 
-                  </ListItemIcon>
-                  {/* <ListItemText primary={text} /> */}
-                </ListItemButton>
-                <ListItemButton>
-                <LogOutButton className="navLink" />
-                  <ListItemIcon>
-                     <InboxIcon /> 
-                  </ListItemIcon>
-                  {/* <ListItemText primary={text} /> */}
-                </ListItemButton>
-                </Grid>
-                </List>
-                
-          <Divider />
-          <List>
-            {['All mail', 'Trash', 'Spam'].map((text, index) => (
-              <ListItem key={text} disablePadding>
-                <ListItemButton>
-                  <ListItemIcon>
-                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                  </ListItemIcon>
-                  <ListItemText primary={text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+
+          {/* Only the Founder sees these links */}
+          {user.access_group === "FOUNDER" && (
+          <>
+          <ListItemButton component={Link} to="/founder/profile/:id">
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText primary="Dashboard" />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/start">
+            <ListItemIcon>
+              <HelpOutlineIcon />
+            </ListItemIcon>
+            <ListItemText primary="Founder Questionnaire" />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/mvpreport">
+            <ListItemIcon>
+              <AssessmentIcon />
+            </ListItemIcon>
+            <ListItemText primary="MVP Report" />
+          </ListItemButton>
+          </>
+        )}
+
+          {/* Only the CDFI sees these links */}
+          {user.access_group === "CDFI" && (
+          <>
+          <ListItemButton component={Link} to="/cdfidashboard">
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            <ListItemText primary="Dashboard" />
+          </ListItemButton>
+
+          <ListItemButton component={Link} to="/user">
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            <ListItemText primary="CDFI Home" />
+          </ListItemButton>
+          </>
+        )}
+
+          {/* All users see the below links */}
+          <ListItemButton component={Link} to="/about">
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary="About" />
+          </ListItemButton>
+
+          <ListItemButton onClick={() => dispatch({ type: 'LOGOUT' })}>
+            <ListItemIcon>
+              <LogoutIcon />
+            </ListItemIcon>
+            <ListItemText primary="Log Out" />
+          </ListItemButton>
+        </List>
       </Drawer>
-      
-        {/* DONT DELETE */}
-      {/* <Link to="/home">
+    </div>
+  )
+}
+
+export default Nav
+
+{
+  /* DONT DELETE */
+}
+{
+  /* <Link to="/home">
         <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
       </Link>
-      <div> */}
-        {/* If no user is logged in, show these links */}
-        {/* {!user.id && (
+      <div> */
+}
+{
+  /* If no user is logged in, show these links */
+}
+{
+  /* {!user.id && (
           // If there's no user, show login/registration links
           <Link className="navLink" to="/login">
             Login / Register
           </Link>
-        )} */}
+        )} */
+}
 
-        {/* If a user is logged in, show these links */}
-        {/* {user.id && (
+{
+  /* If a user is logged in, show these links */
+}
+{
+  /* {user.id && (
           <>
             <Link className="navLink" to="/user">
               Home
@@ -147,9 +158,5 @@ function Nav() {
         <Link className="navLink" to="/about">
           About
         </Link>
-      </div> */}
-    </div>
-  );
+      </div> */
 }
-
-export default Nav;
