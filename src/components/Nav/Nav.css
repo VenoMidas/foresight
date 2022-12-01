@@ -38,5 +38,12 @@
 }
 
 .navLink:hover {
-  background-color: #008183;
+  background-color: #0c3d50;
+}
+
+.drawer {
+  background-color: #0c3d50;
+}
+.drawerItem {
+  justify-content: 'center'
 }
