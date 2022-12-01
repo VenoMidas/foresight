@@ -16,6 +16,8 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from '../HomePage/HomePage';
 import FounderProfile from '../FounderProfile/FounderProfile';
 import RegisterFounderPage from '../RegisterFounder/RegisterFounderPage';
+import MvpReport from '../MvpReport/MvpReport';
+import CdfiDashboard from '../CdfiDashboard/CdfiDashboard';
 // Questionnarie imports
 import Start from '../Start/Start';
 import Introduction from '../Introduction/Introduction';
@@ -118,6 +120,14 @@ function App() {
 
           <ProtectedRoute exact path="/review">
             <Review />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport">
+            <MvpReport />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/cdfidashboard">
+            <CdfiDashboard />
           </ProtectedRoute>
 
           {/* NON-PROTECTED ROUTES */}
