@@ -63,7 +63,7 @@ const Introduction = () => {
         setResponseList(responseListCopy);
     };
 
-    console.log('this is the response list', responseList);
+    // console.log('this is the response list', responseList);
 
     // handleChange
     const handleResponseListChange = (event, index) => {
@@ -74,23 +74,24 @@ const Introduction = () => {
         setResponseList(responseListCopy);
     }
 
-    // const postIntroductionResponses = () => {
-    //     console.log('in postIntroductionResponses');
-    //     axios.post(`/api/response/${user.id}`, { data: `('1', 'Test Company', '${user.id}'), ('2', 'Test Name', '${user.id}'), ('3', 'Test Email', '${user.id}'), ('4', 'Test State', '${user.id}'), ('5', 'Test Website', '${user.id}')` })
-    //         .then(() => {
-    //             history.push('/team')
-    //         }).catch((error) => {
-    //             console.log(error);
-    //             alert('Something went wrong!');
-    //         });
-    // };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('in handleSubmit');
+        axios.post(`/api/response/${user.id}`, { data: responseList })
+            .then(() => {
+                history.push('/team')
+            }).catch((error) => {
+                console.log(error);
+                alert('Something went wrong!');
+            });
+    };
 
     return (
         <center>
             <Box>
                 <ProgressBar step={1} />
                 <h2>Introduction</h2>
-                <p>On refresh, we get an "Each child in a list" key error for the Progress Bar and page - doesn't happen on normal access of page</p>
+                <form onSubmit={handleSubmit}>
                 {introductionQuestions.map(question => {
                     // check if question.id matches a choice.question_id
                     let choiceCheck = false;
@@ -127,7 +128,8 @@ const Introduction = () => {
                 })}
                 <br />
                 <Button onClick={() => history.push('/start')}>Cancel</Button>
-                <Button onClick={() => history.push('/team')}>Continue</Button>
+                <Button type="submit">Continue</Button>
+                </form>
             </Box>
         </center>
     )

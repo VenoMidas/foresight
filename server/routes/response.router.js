@@ -37,8 +37,8 @@ router.get('/:id', (req, res) => {
 
 router.post('/:id', rejectUnauthenticated, async (req, res) => {
     try {
-        const response = req.body.response;
-        console.log(response);
+        const response = req.body.data;
+        console.log('req.body', response);
         // todo: add Begin, Rollback, and Commit
         for (let i = 0; i < response.length; i += 1) {
             let queryText = `INSERT INTO "response" (question_id, response, user_id)
