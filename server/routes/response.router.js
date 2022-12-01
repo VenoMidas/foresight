@@ -20,21 +20,6 @@ router.get('/:id', (req, res) => {
     });
 });
 
-// Original POST
-// router.post('/:id', rejectUnauthenticated, (req, res,) => {
-//     const data = req.body.data;
-//     console.log('This is the body.data', data);
-
-//     const queryText = `INSERT INTO "response" (question_id, response, user_id)
-//                        VALUES ${data};`;
-//     pool.query(queryText)
-//         .then(() => res.sendStatus(201))
-//         .catch((error) => {
-//             console.log('response POST failed', error);
-//             res.sendStatus(500);
-//         });
-// });
-
 router.post('/:id', rejectUnauthenticated, async (req, res) => {
     try {
         const response = req.body.data;
