@@ -12,6 +12,8 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 function HomePage() {
   const [open, setOpen] = useState(false);
+  // holds email address that will get a link for RegisterForm
+  const [email, setEmail] = useState('');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -22,6 +24,7 @@ function HomePage() {
   };
 
   const handleInvite = () => {
+    handleEmail();
     setOpen(false);
     console.log('Send Email to supplied email address. Logout and navigate to localhost:3000/#/register/founder to register a founder');
   };
@@ -32,7 +35,11 @@ function HomePage() {
     {
       email: email
     })
-    .then()
+    .then(() => {
+     alert('Have founder check their email')
+    }).catch((err) => {
+      console.log('err in handleEmail', err)
+    })
   }
 
 
@@ -55,6 +62,7 @@ function HomePage() {
               type="email"
               fullWidth
               variant="standard"
+              onChange={(event) => setEmail(event.target.value)}
             />
           </DialogContent>
           <DialogActions>
