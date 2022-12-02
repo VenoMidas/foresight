@@ -14,8 +14,9 @@ import HomeIcon from '@mui/icons-material/Home'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
 import InfoIcon from '@mui/icons-material/Info'
 import LogoutIcon from '@mui/icons-material/Logout'
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import AssessmentIcon from '@mui/icons-material/Assessment';
+import DashboardIcon from '@mui/icons-material/Dashboard'
+import AssessmentIcon from '@mui/icons-material/Assessment'
+import LoginIcon from '@mui/icons-material/Login'
 
 function Nav() {
   // Size of Drawer
@@ -49,50 +50,62 @@ function Nav() {
             />
           </ListItemButton>
 
+          {/* Only show when no user is logged in */}
+          {!user.id && (
+            <>
+              <ListItemButton component={Link} to="/home">
+                <ListItemIcon>
+                  <LoginIcon />
+                </ListItemIcon>
+                <ListItemText primary="Log In" />
+              </ListItemButton>
+            </>
+          )}
+
           {/* Only the Founder sees these links */}
-          {user.access_group === "FOUNDER" && (
-          <>
-          <ListItemButton component={Link} to="/founder/profile/:id">
-            <ListItemIcon>
-              <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-          </ListItemButton>
+          {user.access_group === 'FOUNDER' && (
+            <>
+              <ListItemButton component={Link} to="/founder/profile/:id">
+                <ListItemIcon>
+                  <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItemButton>
 
-          <ListItemButton component={Link} to="/start">
-            <ListItemIcon>
-              <HelpOutlineIcon />
-            </ListItemIcon>
-            <ListItemText primary="Founder Questionnaire" />
-          </ListItemButton>
+              <ListItemButton component={Link} to="/start">
+                <ListItemIcon>
+                  <HelpOutlineIcon />
+                </ListItemIcon>
+                <ListItemText primary="Founder Questionnaire" />
+              </ListItemButton>
 
-          <ListItemButton component={Link} to="/mvpreport">
-            <ListItemIcon>
-              <AssessmentIcon />
-            </ListItemIcon>
-            <ListItemText primary="MVP Report" />
-          </ListItemButton>
-          </>
-        )}
+              <ListItemButton component={Link} to="/mvpreport">
+                <ListItemIcon>
+                  <AssessmentIcon />
+                </ListItemIcon>
+                <ListItemText primary="MVP Report" />
+              </ListItemButton>
+            </>
+          )}
 
           {/* Only the CDFI sees these links */}
-          {user.access_group === "CDFI" && (
-          <>
-          <ListItemButton component={Link} to="/cdfidashboard">
-            <ListItemIcon>
-              <DashboardIcon />
-            </ListItemIcon>
-            <ListItemText primary="Dashboard" />
-          </ListItemButton>
+          {user.access_group === 'CDFI' && (
+            <>
+              <ListItemButton component={Link} to="/cdfidashboard">
+                <ListItemIcon>
+                  <DashboardIcon />
+                </ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItemButton>
 
-          <ListItemButton component={Link} to="/user">
-            <ListItemIcon>
-              <HomeIcon />
-            </ListItemIcon>
-            <ListItemText primary="CDFI Home" />
-          </ListItemButton>
-          </>
-        )}
+              <ListItemButton component={Link} to="/user">
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
+                <ListItemText primary="CDFI Home" />
+              </ListItemButton>
+            </>
+          )}
 
           {/* All users see the below links */}
           <ListItemButton component={Link} to="/about">
@@ -102,12 +115,17 @@ function Nav() {
             <ListItemText primary="About" />
           </ListItemButton>
 
-          <ListItemButton onClick={() => dispatch({ type: 'LOGOUT' })}>
-            <ListItemIcon>
-              <LogoutIcon />
-            </ListItemIcon>
-            <ListItemText primary="Log Out" />
-          </ListItemButton>
+          {/* These links only show up when logged in as ANY user */}
+          {user.id && (
+            <>
+              <ListItemButton onClick={() => dispatch({ type: 'LOGOUT' })}>
+                <ListItemIcon>
+                  <LogoutIcon />
+                </ListItemIcon>
+                <ListItemText primary="Log Out" />
+              </ListItemButton>
+            </>
+          )}
         </List>
       </Drawer>
     </div>
@@ -115,48 +133,3 @@ function Nav() {
 }
 
 export default Nav
-
-{
-  /* DONT DELETE */
-}
-{
-  /* <Link to="/home">
-        <Avatar src={foresightLogo} sx={{ width: 70, height: 70}} style={{ borderRadius: 0, padding: 10 }} />
-      </Link>
-      <div> */
-}
-{
-  /* If no user is logged in, show these links */
-}
-{
-  /* {!user.id && (
-          // If there's no user, show login/registration links
-          <Link className="navLink" to="/login">
-            Login / Register
-          </Link>
-        )} */
-}
-
-{
-  /* If a user is logged in, show these links */
-}
-{
-  /* {user.id && (
-          <>
-            <Link className="navLink" to="/user">
-              Home
-            </Link>
-
-            <Link className="navLink" to="/start">
-              Founder Questionnaire
-            </Link>
-
-            <LogOutButton className="navLink" />
-          </>
-        )}
-
-        <Link className="navLink" to="/about">
-          About
-        </Link>
-      </div> */
-}
