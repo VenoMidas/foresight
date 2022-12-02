@@ -1,5 +1,6 @@
 import './HomePage.css';
 import React, { useState } from 'react';
+import axios from 'axios';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -11,6 +12,8 @@ import DownloadIcon from '@mui/icons-material/Download';
 
 function HomePage() {
   const [open, setOpen] = useState(false);
+  // holds email address that will get a link for RegisterForm
+  const [email, setEmail] = useState('');
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -21,9 +24,23 @@ function HomePage() {
   };
 
   const handleInvite = () => {
+    handleEmail();
     setOpen(false);
     console.log('Send Email to supplied email address. Logout and navigate to localhost:3000/#/register/founder to register a founder');
   };
+
+  // function that POST email
+  const handleEmail = () => {
+    axios.post('/api/email', 
+    {
+      email: email
+    })
+    .then(() => {
+     alert('Have founder check their email')
+    }).catch((err) => {
+      console.log('err in handleEmail', err)
+    })
+  }
 
 
   return (
@@ -45,6 +62,7 @@ function HomePage() {
               type="email"
               fullWidth
               variant="standard"
+              onChange={(event) => setEmail(event.target.value)}
             />
           </DialogContent>
           <DialogActions>
