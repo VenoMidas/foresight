@@ -1,5 +1,6 @@
 import './HomePage.css';
 import React, { useState } from 'react';
+import axios from 'axios';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -24,6 +25,15 @@ function HomePage() {
     setOpen(false);
     console.log('Send Email to supplied email address. Logout and navigate to localhost:3000/#/register/founder to register a founder');
   };
+
+  // function that POST email
+  const handleEmail = () => {
+    axios.post('/api/email', 
+    {
+      email: email
+    })
+    .then()
+  }
 
 
   return (
