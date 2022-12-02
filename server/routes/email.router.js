@@ -2,6 +2,7 @@ const express = require('express');
 const {
   rejectUnauthenticated,
 } = require('../modules/authentication-middleware');
+// ommitted, keep incase we want to save email in a database later
 // const pool = require('../modules/pool');
 const router = express.Router();
 
