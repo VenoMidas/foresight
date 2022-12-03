@@ -43,6 +43,7 @@
 
 .drawer {
   background-color: #0c3d50;
+  height: 100%;
 }
 .drawerItem {
   justify-content: 'center'

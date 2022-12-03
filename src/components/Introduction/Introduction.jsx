@@ -83,6 +83,7 @@ const Introduction = () => {
     };
 
     return (
+        <div className='container'>
         <center>
             <Box>
                 <ProgressBar step={1} />
@@ -128,6 +129,7 @@ const Introduction = () => {
                 </form>
             </Box>
         </center>
+        </div>
     )
 }
 

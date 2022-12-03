@@ -83,6 +83,7 @@ const IPLegal = () => {
     };
 
     return (
+        <div className='container'>
         <center>
             <Box>
                 <ProgressBar step={5} />
@@ -128,6 +129,7 @@ const IPLegal = () => {
                 </form>
             </Box>
         </center>
+        </div>
     )
 }
 

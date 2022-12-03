@@ -45,7 +45,7 @@ function Nav() {
           <ListItemButton component={Link} to="/home">
             <Avatar
               src={foresightLogo}
-              sx={{ width: 70, height: 70 }}
+              sx={{ width: 80, height: 80 }}
               style={{ borderRadius: 0, padding: 10 }}
             />
           </ListItemButton>

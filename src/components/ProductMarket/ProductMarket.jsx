@@ -83,6 +83,7 @@ const ProductMarket = () => {
     };
     console.log('response list', responseList)
     return (
+        <div className='container'>
         <center>
             <Box>
                 <ProgressBar step={4} />
@@ -128,6 +129,7 @@ const ProductMarket = () => {
                 </form>
             </Box>
         </center>
+    </div>
     )
 }
 
