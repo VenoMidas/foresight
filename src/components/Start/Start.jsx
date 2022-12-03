@@ -6,6 +6,7 @@ const Start = () => {
     const history = useHistory();
 
     return (
+        <div className='container'>
         <center>
             <Box>
                 <h2>Welcome to #foresight</h2>
@@ -13,6 +14,7 @@ const Start = () => {
                 <Button onClick={() => history.push('/introduction')}>Start</Button>
             </Box>
         </center>
+        </div>
     )
 }
 

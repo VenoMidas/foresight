@@ -81,6 +81,7 @@ const BusinessModel = () => {
 
 
     return (
+        <div className='container'>
         <center>
             <Box>
                 <ProgressBar step={3} />
@@ -125,6 +126,7 @@ const BusinessModel = () => {
                 </form>
             </Box>
         </center>
+        </div>
     )
 }
 

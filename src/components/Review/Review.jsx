@@ -9,6 +9,7 @@ const Review = () => {
     // useSelectors here
 
     return (
+    <div className='container'>
         <center>
             <Box>
                 <ProgressBar step={6} />
@@ -18,6 +19,7 @@ const Review = () => {
                 <Button>Submit</Button>
             </Box>
         </center>
+    </div>
     )
 }
 

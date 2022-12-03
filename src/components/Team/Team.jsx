@@ -84,6 +84,7 @@ const Team = () => {
 
 
     return (
+        <div className='container'>
         <center>
             <Box>
                 <ProgressBar step={2} />
@@ -128,6 +129,7 @@ const Team = () => {
                 </form>
             </Box>
         </center>
+        </div>
     )
 }
 
