@@ -3,11 +3,13 @@ import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import foresightLogo from '../../images/logotwo.png';
 import graphOne from '../../images/MVP_Graph.jpg';
 import graphTwo from '../../images/MVP_Graph_2.jpg';
+import './MvpReport.css';
 
 // Testing
 import Card from '@mui/material/Card';
