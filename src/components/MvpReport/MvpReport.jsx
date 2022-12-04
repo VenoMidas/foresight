@@ -9,7 +9,6 @@ import ImageListItem from '@mui/material/ImageListItem';
 import foresightLogo from '../../images/logotwo.png';
 import graphOne from '../../images/MVP_Graph.jpg';
 import graphTwo from '../../images/MVP_Graph_2.jpg';
-import './MvpReport.css';
 
 // Testing
 import Card from '@mui/material/Card';
