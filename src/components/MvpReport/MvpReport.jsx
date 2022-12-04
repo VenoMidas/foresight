@@ -84,7 +84,7 @@ function MvpReport() {
                   <p>Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong></p>
                   <p>Industries: <strong>Fintech, Big Data</strong></p>
                   <p>Headquarter Location: <strong> Missouri, USA</strong></p>
-                  <p>Website: <strong>www.tryforesight.come</strong></p>
+                  <p>Website: <strong>www.tryforesight.com</strong></p>
                 </CardContent>
               </Card>
             </Item>
