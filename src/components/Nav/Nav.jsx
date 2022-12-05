@@ -9,6 +9,12 @@ import List from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
+import Box from '@mui/material/Box';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import AccountCircle from '@mui/icons-material/AccountCircle';
 // icons
 import HomeIcon from '@mui/icons-material/Home'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
@@ -27,6 +33,26 @@ function Nav() {
 
   return (
     <div>
+      <Box sx={{ display: 'flex' }}>
+        <AppBar
+          position="fixed"
+          sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`, bgcolor: '#0c3d50' }}
+        >
+          <Toolbar>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              
+            </Typography>
+          <div>
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+            >
+              <AccountCircle />
+            </IconButton>
+          </div>
+          </Toolbar>
+        </AppBar>
+      </Box>
       <Drawer
         variant="permanent"
         sx={{
