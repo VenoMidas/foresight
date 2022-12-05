@@ -10,10 +10,30 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 function FounderProfile() {
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: 'lightGrey',
+    padding: 2
+  }));
+
   return (
     <center className="container">
-      <h2>Founder Profile</h2>
-      <p>Founder Name and Company Here.</p>
+      <Box sx={{ flexgrow: 1}}>
+        <Grid container spacing={1.9}>
+          <Grid item xs={8}>
+            <Item>
+              <Card sx={{ display: 'flex', maxWidth: 800 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                  <CardContent sx={{ flex: '1 0 auto' }}>
+                    <h3><u>Your Fundability</u></h3>
+                    <p>Graph Picture Here</p>
+                  </CardContent>
+                </Box>
+              </Card>
+            </Item>
+          </Grid>
+        </Grid>
+      </Box>
     </center>
   );
 }
