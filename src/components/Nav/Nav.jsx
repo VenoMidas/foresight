@@ -33,6 +33,7 @@ function Nav() {
 
   return (
     <div>
+      {/* AppBar */}
       <Box sx={{ display: 'flex' }}>
         <AppBar
           position="fixed"
@@ -40,120 +41,121 @@ function Nav() {
         >
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              
+
             </Typography>
-          <div>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-            >
-              <AccountCircle />
-            </IconButton>
-          </div>
+            <div>
+              <IconButton
+                size="large"
+                aria-label="account of current user"
+              >
+                <AccountCircle style={{ color: 'white' }} />
+              </IconButton>
+            </div>
           </Toolbar>
         </AppBar>
-      </Box>
-      <Drawer
-        variant="permanent"
-        sx={{
-          width: drawerWidth,
-          flexShrink: 0,
-          [`& .MuiDrawer-paper`]: {
+        {/* Drawer */}
+        <Drawer
+          sx={{
             width: drawerWidth,
-            boxSizing: 'border-box',
-            backgroundColor: '#0c3d50',
-            position: 'absolute',
-          },
-        }}
-      >
-        <List>
-          {/* All users see the foresight logo */}
-          <ListItemButton component={Link} to="/home">
-            <Avatar
-              src={foresightLogo}
-              sx={{ width: 80, height: 80 }}
-              style={{ borderRadius: 0, padding: 10 }}
-            />
-          </ListItemButton>
+            flexShrink: 0,
+            [`& .MuiDrawer-paper`]: {
+              width: drawerWidth,
+              boxSizing: 'border-box',
+              backgroundColor: '#0c3d50',
+            },
+          }}
+          variant="permanent"
+          anchor="left"
+        >
+          <List>
+            {/* All users see the foresight logo */}
+            <ListItemButton component={Link} to="/home">
+              <Avatar
+                src={foresightLogo}
+                sx={{ width: 80, height: 80 }}
+                style={{ borderRadius: 0, padding: 10, paddingLeft: 50 }}
+              />
+            </ListItemButton>
 
-          {/* Only show when no user is logged in */}
-          {!user.id && (
-            <>
-              <ListItemButton component={Link} to="/home">
-                <ListItemIcon>
-                  <LoginIcon />
-                </ListItemIcon>
-                <ListItemText primary="Log In" />
-              </ListItemButton>
-            </>
-          )}
+            {/* Only show when no user is logged in */}
+            {!user.id && (
+              <>
+                <ListItemButton component={Link} to="/home">
+                  <ListItemIcon>
+                    <LoginIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="Log In" />
+                </ListItemButton>
+              </>
+            )}
 
-          {/* Only the Founder sees these links */}
-          {user.access_group === 'FOUNDER' && (
-            <>
-              <ListItemButton component={Link} to="/founder/profile/:id">
-                <ListItemIcon>
-                  <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />
-              </ListItemButton>
+            {/* Only the Founder sees these links */}
+            {user.access_group === 'FOUNDER' && (
+              <>
+                <ListItemButton component={Link} to="/founder/profile/:id">
+                  <ListItemIcon>
+                    <DashboardIcon style={{ color: 'white' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Dashboard" style={{ color: 'white' }} />
+                </ListItemButton>
 
-              <ListItemButton component={Link} to="/start">
-                <ListItemIcon>
-                  <HelpOutlineIcon />
-                </ListItemIcon>
-                <ListItemText primary="Founder Questionnaire" />
-              </ListItemButton>
+                <ListItemButton component={Link} to="/start">
+                  <ListItemIcon>
+                    <HelpOutlineIcon style={{ color: 'white' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Founder Questionnaire" style={{ color: 'white' }} />
+                </ListItemButton>
 
-              <ListItemButton component={Link} to="/mvpreport">
-                <ListItemIcon>
-                  <AssessmentIcon />
-                </ListItemIcon>
-                <ListItemText primary="MVP Report" />
-              </ListItemButton>
-            </>
-          )}
+                <ListItemButton component={Link} to="/mvpreport">
+                  <ListItemIcon>
+                    <AssessmentIcon style={{ color: 'white' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="MVP Report" style={{ color: 'white' }} />
+                </ListItemButton>
+              </>
+            )}
 
-          {/* Only the CDFI sees these links */}
-          {user.access_group === 'CDFI' && (
-            <>
-              <ListItemButton component={Link} to="/cdfidashboard">
-                <ListItemIcon>
-                  <DashboardIcon />
-                </ListItemIcon>
-                <ListItemText primary="Dashboard" />
-              </ListItemButton>
+            {/* Only the CDFI sees these links */}
+            {user.access_group === 'CDFI' && (
+              <>
+                <ListItemButton component={Link} to="/cdfidashboard">
+                  <ListItemIcon>
+                    <DashboardIcon style={{ color: 'white' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Dashboard" style={{ color: 'white' }} />
+                </ListItemButton>
 
-              <ListItemButton component={Link} to="/user">
-                <ListItemIcon>
-                  <HomeIcon />
-                </ListItemIcon>
-                <ListItemText primary="CDFI Home" />
-              </ListItemButton>
-            </>
-          )}
+                <ListItemButton component={Link} to="/user">
+                  <ListItemIcon>
+                    <HomeIcon style={{ color: 'white' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="CDFI Home" style={{ color: 'white' }} />
+                </ListItemButton>
+              </>
+            )}
 
-          {/* All users see the below links */}
-          <ListItemButton component={Link} to="/about">
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary="About" />
-          </ListItemButton>
+            {/* All users see the below links */}
+            <ListItemButton component={Link} to="/about">
+              <ListItemIcon>
+                <InfoIcon style={{ color: 'white' }} />
+              </ListItemIcon>
+              <ListItemText primary="About" style={{ color: 'white' }} />
+            </ListItemButton>
 
-          {/* These links only show up when logged in as ANY user */}
-          {user.id && (
-            <>
-              <ListItemButton onClick={() => dispatch({ type: 'LOGOUT' })}>
-                <ListItemIcon>
-                  <LogoutIcon />
-                </ListItemIcon>
-                <ListItemText primary="Log Out" />
-              </ListItemButton>
-            </>
-          )}
-        </List>
-      </Drawer>
+            {/* These links only show up when logged in as ANY user */}
+            {user.id && (
+              <>
+                <ListItemButton onClick={() => dispatch({ type: 'LOGOUT' })}>
+                  <ListItemIcon>
+                    <LogoutIcon style={{ color: 'white' }} />
+                  </ListItemIcon>
+                  <ListItemText primary="Log Out" style={{ color: 'white' }} />
+                </ListItemButton>
+              </>
+            )}
+          </List>
+        </Drawer>
+      </Box>
     </div>
   )
 }
