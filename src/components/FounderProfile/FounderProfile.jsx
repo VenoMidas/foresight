@@ -27,57 +27,64 @@ function FounderProfile() {
         <Grid container spacing={1.9}>
           <Grid item xs={8}>
             <Item>
-              <Card sx={{ display: 'flex', maxWidth: 1000 }}>
+              <Card sx={{ display: 'flex', maxWidth: 1200 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
                   <CardContent sx={{ flex: '1 0 auto' }}>
                     <h3><u>Your Fundability</u></h3>
-                    <p>Graph Picture Here</p>
+                    <CardMedia component="img" sx={{ width: 600 }} image={graphOne} />
+                    <br />
                   </CardContent>
                 </Box>
               </Card>
             </Item>            
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3.4}>
             <Item>
-              <Card sx={{ display: 'flex', maxWidth: 600 }}>
-                <Box sx={{ display: 'flex', flexDireciton: 'column', textAlign: 'left' }}>
+              <Card sx={{ display: 'flex', maxWidth: 1200 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
                   <CardContent sx={{ flex: '1 0 auto' }}>
-                    <h3><u>My Foresight Score</u></h3>
-                    <p>Graph Picture Here</p>
+                    <h3><u>Your Fundability</u></h3>
+                    <CardMedia component="img" sx={{ width: 275 }} image={graphTwo} />
+                    <br />
                   </CardContent>
                 </Box>
               </Card>
-            </Item>
+            </Item>            
           </Grid>
           <Grid item sx={{ textAlign: 'left' }} xs={8}>
             <Item>
               <Card>
                 <CardContent>
-                  <p>Graph Picture Here</p>
+                  <CardMedia component="img" sx={{ width: 800 }} image={graphThree} />
                 </CardContent>
               </Card>
             </Item>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={3.4}>
             <Item>
-              <Card sx={{ display: 'flex', maxWidth: 600 }}>
+              <Card sx={{ display: 'flex', maxWidth: 1200 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
                   <CardContent sx={{ flex: '1 0 auto' }}>
-                    <p>Graph Picture Here</p>
+                    <CardMedia component="img" sx={{ width: 275 }} image={graphFour} />
+                    <br />
+                    <br />
                   </CardContent>
                 </Box>
               </Card>
-            </Item>
+            </Item>            
           </Grid>
-          <Grid item sx={{ textAlign: 'left' }} xs={12}>
+          <Grid item xs={11.4}>
             <Item>
-              <Card>
-                <CardContent>
-                  <h3><u>Non-Dilutive Funding Matches</u></h3>
-                  <p>Graph Picture Here</p>
-                </CardContent>
+              <Card sx={{ display: 'flex', maxWidth: 1200 }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                  <CardContent sx={{ flex: '1 0 auto' }}>
+                    <h3><u>Your Fundability</u></h3>
+                    <CardMedia component="img" sx={{ width: 1050 }} image={graphFive} />
+                    <br />
+                  </CardContent>
+                </Box>
               </Card>
-            </Item>
+            </Item>            
           </Grid>
         </Grid>
       </Box>
