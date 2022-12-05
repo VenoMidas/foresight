@@ -41,7 +41,7 @@ function Nav() {
         >
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-
+              {/* This remains empty for help account icon flex to right */}
             </Typography>
             <div>
               <IconButton
