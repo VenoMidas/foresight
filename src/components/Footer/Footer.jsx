@@ -7,7 +7,7 @@ import './Footer.css';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer>&copy; tryforesight.io</footer>;
+  return <footer>&copy; #foresight</footer>;
 }
 
 export default Footer;
