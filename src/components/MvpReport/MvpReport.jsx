@@ -27,7 +27,7 @@ function MvpReport() {
         <Grid container spacing={1.9}>
           <Grid item xs={6}>
             <Item>
-              <Card sx={{ display: 'flex', maxWidth: 600 }}>
+              <Card sx={{ display: 'flex', maxWidth: 800 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
                   <CardContent sx={{ flex: '1 0 auto' }}>
                     <CardMedia component="img" sx={{ width: 150 }} image={foresightLogo} />
@@ -52,7 +52,7 @@ function MvpReport() {
           </Grid>
           <Grid item xs={6}>
             <Item>
-              <Card sx={{ display: 'flex', maxWidth: 600 }}>
+              <Card sx={{ display: 'flex', maxWidth: 800 }}>
                 <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
                   <CardContent sx={{ flex: '1 0 auto' }}>
                     <CardMedia component="img" sx={{ width: 150 }} image={foresightLogo} />
