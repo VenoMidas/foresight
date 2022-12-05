@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+import logo from '../../images/logotwo.png';
 
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
@@ -7,7 +8,7 @@ import './Footer.css';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer>&copy; Prime Digital Academy</footer>;
+  return <footer>&copy;<b>#foresight</b></footer>;
 }
 
 export default Footer;
