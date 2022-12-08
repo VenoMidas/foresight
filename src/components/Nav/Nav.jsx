@@ -128,13 +128,13 @@ function Nav() {
               </>
             )}
 
-            {/* All users see the below links */}
+            {/* All users see the below links
             <ListItemButton component={Link} to="/about">
               <ListItemIcon>
                 <InfoIcon style={{ color: 'white' }} />
               </ListItemIcon>
               <ListItemText primary="About" style={{ color: 'white' }} />
-            </ListItemButton>
+            </ListItemButton> */}
 
             {/* These links only show up when logged in as ANY user */}
             {user.id && (
