@@ -21,6 +21,7 @@ function FounderProfile() {
 
   return (
     <center className="container">
+      <h1>#Dashboard</h1>
       <Box sx={{ flexgrow: 1 }}>
         <Grid container spacing={1.9}>
           <Grid item xs={8}>
