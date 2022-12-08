@@ -82,9 +82,9 @@ function Nav() {
               <>
                 <ListItemButton component={Link} to="/home">
                   <ListItemIcon>
-                    <LoginIcon />
+                    <LoginIcon style={{ color: 'white' }} />
                   </ListItemIcon>
-                  <ListItemText primary="Log In" />
+                  <ListItemText primary="Log In" style={{ color: 'white' }} />
                 </ListItemButton>
               </>
             )}
