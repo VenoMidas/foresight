@@ -23,18 +23,58 @@ function HomePage() {
             <th>Add to Dashboard</th>
           </tr>
           <tr>
-            <td>Charlotte</td>
-            <td>Foresight</td>
+            <td>Cyle Dressel</td>
+            <td>Dress Barn</td>
             <td>08/26/2022 11:00</td>
             <td>Low</td>
             <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
             <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
           </tr>
           <tr>
-            <td>Meaghan</td>
-            <td>Prime</td>
+            <td>Kyle VanTassell</td>
+            <td>Fish & Chippy</td>
             <td>11/23/2022 11:19</td>
+            <td>Medium-Low</td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
+          </tr>
+          <tr>
+            <td>Tendie Vandressen</td>
+            <td>Butter & Bread Cafe</td>
+            <td>11/25/2022 1:49</td>
             <td>Medium</td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
+          </tr>
+          <tr>
+            <td>Francis Longerland</td>
+            <td>Fishing Outfitters</td>
+            <td>11/27/2022 9:22</td>
+            <td>Medium</td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
+          </tr>
+          <tr>
+            <td>Maura Tannenbaum</td>
+            <td>Dalmatian Mousery</td>
+            <td>11/29/2022 12:32</td>
+            <td>Low</td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
+          </tr>
+          <tr>
+            <td>Vincent D'Onofrio</td>
+            <td>Galaxy Accumulation</td>
+            <td>12/2/2022 08:14</td>
+            <td>High</td>
+            <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
+          </tr>
+          <tr>
+            <td>Steve Zissou</td>
+            <td>Aquatic Exploration</td>
+            <td>12/2/2022 3:14</td>
+            <td>Medium-Low</td>
             <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
             <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
           </tr>
