@@ -8,6 +8,8 @@ import ImageListItem from '@mui/material/ImageListItem';
 import foresightLogo from '../../images/logotwo.png';
 import graphOne from '../../images/MVP_Graph.jpg';
 import graphTwo from '../../images/MVP_Graph_2.jpg';
+import Button from '@mui/material/Button'
+import { useHistory } from 'react-router-dom';
 
 // Testing
 import Card from '@mui/material/Card';
@@ -15,6 +17,11 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 
 function MvpReport() {
+  const history = useHistory();
+
+  const handleClose = () => {
+    history.push('/user')
+  }
 
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: 'lightGrey',
@@ -23,6 +30,8 @@ function MvpReport() {
 
   return (
     <center className="container">
+      <h1>#MVP Report</h1>
+      <Button style={{ color: '#0c3d50' }} onClick={handleClose}>Close</Button>
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1.9}>
           <Grid item xs={6}>
