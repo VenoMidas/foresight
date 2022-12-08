@@ -16,7 +16,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 
-function MvpReport() {
+function MvpReport3() {
   const history = useHistory()
 
   const handleClose = () => {
@@ -30,7 +30,7 @@ function MvpReport() {
 
   return (
     <center className="container">
-      <h1>#MVP Report</h1>
+      <h1>#MVP Report 3</h1>
       <Button variant="outlined" color="error" onClick={handleClose}>
         Close
       </Button>
@@ -249,4 +249,4 @@ function MvpReport() {
   )
 }
 
-export default MvpReport
+export default MvpReport3;

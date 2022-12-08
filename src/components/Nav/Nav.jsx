@@ -9,19 +9,17 @@ import List from '@mui/material/List'
 import ListItemText from '@mui/material/ListItemText'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemIcon from '@mui/material/ListItemIcon'
-import Box from '@mui/material/Box';
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import AccountCircle from '@mui/icons-material/AccountCircle';
+import Box from '@mui/material/Box'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import IconButton from '@mui/material/IconButton'
+import AccountCircle from '@mui/icons-material/AccountCircle'
 // icons
 import HomeIcon from '@mui/icons-material/Home'
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline'
-import InfoIcon from '@mui/icons-material/Info'
 import LogoutIcon from '@mui/icons-material/Logout'
 import DashboardIcon from '@mui/icons-material/Dashboard'
-import AssessmentIcon from '@mui/icons-material/Assessment'
 import LoginIcon from '@mui/icons-material/Login'
 
 function Nav() {
@@ -37,17 +35,18 @@ function Nav() {
       <Box sx={{ display: 'flex' }}>
         <AppBar
           position="fixed"
-          sx={{ width: `calc(100% - ${drawerWidth}px)`, ml: `${drawerWidth}px`, bgcolor: '#0c3d50' }}
+          sx={{
+            width: `calc(100% - ${drawerWidth}px)`,
+            ml: `${drawerWidth}px`,
+            bgcolor: '#0c3d50',
+          }}
         >
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               {/* This remains empty for help account icon flex to right */}
             </Typography>
             <div>
-              <IconButton
-                size="large"
-                aria-label="account of current user"
-              >
+              <IconButton size="large" aria-label="account of current user">
                 <AccountCircle style={{ color: 'white' }} />
               </IconButton>
             </div>
@@ -82,9 +81,9 @@ function Nav() {
               <>
                 <ListItemButton component={Link} to="/home">
                   <ListItemIcon>
-                    <LoginIcon />
+                    <LoginIcon style={{ color: 'white' }} />
                   </ListItemIcon>
-                  <ListItemText primary="Log In" />
+                  <ListItemText primary="Log In" style={{ color: 'white' }} />
                 </ListItemButton>
               </>
             )}
@@ -96,16 +95,21 @@ function Nav() {
                   <ListItemIcon>
                     <DashboardIcon style={{ color: 'white' }} />
                   </ListItemIcon>
-                  <ListItemText primary="Dashboard" style={{ color: 'white' }} />
+                  <ListItemText
+                    primary="Dashboard"
+                    style={{ color: 'white' }}
+                  />
                 </ListItemButton>
 
                 <ListItemButton component={Link} to="/start">
                   <ListItemIcon>
                     <HelpOutlineIcon style={{ color: 'white' }} />
                   </ListItemIcon>
-                  <ListItemText primary="Founder Questionnaire" style={{ color: 'white' }} />
+                  <ListItemText
+                    primary="Founder Questionnaire"
+                    style={{ color: 'white' }}
+                  />
                 </ListItemButton>
-
               </>
             )}
 
@@ -116,32 +120,31 @@ function Nav() {
                   <ListItemIcon>
                     <DashboardIcon style={{ color: 'white' }} />
                   </ListItemIcon>
-                  <ListItemText primary="Dashboard" style={{ color: 'white' }} />
+                  <ListItemText
+                    primary="Dashboard"
+                    style={{ color: 'white' }}
+                  />
                 </ListItemButton>
 
                 <ListItemButton component={Link} to="/user">
                   <ListItemIcon>
                     <HomeIcon style={{ color: 'white' }} />
                   </ListItemIcon>
-                  <ListItemText primary="CDFI Home" style={{ color: 'white' }} />
-                </ListItemButton>
-
-                <ListItemButton component={Link} to="/mvpreport">
-                  <ListItemIcon>
-                    <AssessmentIcon style={{ color: 'white' }} />
-                  </ListItemIcon>
-                  <ListItemText primary="MVP Report" style={{ color: 'white' }} />
+                  <ListItemText
+                    primary="CDFI Home"
+                    style={{ color: 'white' }}
+                  />
                 </ListItemButton>
               </>
             )}
 
-            {/* All users see the below links */}
+            {/* All users see the below links
             <ListItemButton component={Link} to="/about">
               <ListItemIcon>
                 <InfoIcon style={{ color: 'white' }} />
               </ListItemIcon>
               <ListItemText primary="About" style={{ color: 'white' }} />
-            </ListItemButton>
+            </ListItemButton> */}
 
             {/* These links only show up when logged in as ANY user */}
             {user.id && (
