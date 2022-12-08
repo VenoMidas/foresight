@@ -2,8 +2,11 @@ import './HomePage.css'
 import React from 'react'
 import Button from '@mui/material/Button'
 import DownloadIcon from '@mui/icons-material/Download'
+import { useHistory } from 'react-router-dom'
 
 function HomePage() {
+  const history = useHistory()
+
   return (
     <div className="container">
       <center>
@@ -26,7 +29,12 @@ function HomePage() {
               <td>08/26/2022 11:00</td>
               <td>Low</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
@@ -41,7 +49,12 @@ function HomePage() {
               <td>11/23/2022 11:19</td>
               <td>Medium-Low</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
@@ -56,7 +69,12 @@ function HomePage() {
               <td>11/25/2022 1:49</td>
               <td>Medium</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
@@ -71,7 +89,12 @@ function HomePage() {
               <td>11/27/2022 9:22</td>
               <td>Medium</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
@@ -86,7 +109,12 @@ function HomePage() {
               <td>11/29/2022 12:32</td>
               <td>Low</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
@@ -101,7 +129,12 @@ function HomePage() {
               <td>12/2/2022 08:14</td>
               <td>High</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
@@ -116,7 +149,12 @@ function HomePage() {
               <td>12/2/2022 3:14</td>
               <td>Medium-Low</td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>View</Button>
+                <Button
+                  style={{ color: '#0c3d50' }}
+                  onClick={() => history.push('/mvpreport')}
+                >
+                  View
+                </Button>
                 <Button style={{ color: '#0c3d50' }}>
                   <DownloadIcon />
                 </Button>
