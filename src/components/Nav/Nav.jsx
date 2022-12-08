@@ -125,13 +125,6 @@ function Nav() {
                   </ListItemIcon>
                   <ListItemText primary="CDFI Home" style={{ color: 'white' }} />
                 </ListItemButton>
-
-                <ListItemButton component={Link} to="/mvpreport">
-                  <ListItemIcon>
-                    <AssessmentIcon style={{ color: 'white' }} />
-                  </ListItemIcon>
-                  <ListItemText primary="MVP Report" style={{ color: 'white' }} />
-                </ListItemButton>
               </>
             )}
 
