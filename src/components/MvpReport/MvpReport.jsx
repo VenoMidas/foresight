@@ -31,7 +31,9 @@ function MvpReport() {
   return (
     <center className="container">
       <h1>#MVP Report</h1>
-      <Button style={{ color: '#0c3d50' }} onClick={handleClose}>Close</Button>
+      <Button variant="outlined" color="error" onClick={handleClose}>Close</Button>
+      <br />
+      <br />
       <Box sx={{ flexGrow: 1 }}>
         <Grid container spacing={1.9}>
           <Grid item xs={6}>
