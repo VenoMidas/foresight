@@ -24,7 +24,7 @@ import MvpReport3 from '../MvpReport/MvpReport3';
 import MvpReport4 from '../MvpReport/MvpReport4';
 import MvpReport5 from '../MvpReport/MvpReport5';
 import MvpReport6 from '../MvpReport/MvpReport6';
-import MvpReport7 from '../MvpReport/MvpReport';
+import MvpReport7 from '../MvpReport/MvpReport7';
 // Questionnarie imports
 import Start from '../Start/Start';
 import Introduction from '../Introduction/Introduction';

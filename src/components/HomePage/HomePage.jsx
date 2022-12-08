@@ -71,7 +71,7 @@ function HomePage() {
               <td>
                 <Button
                   style={{ color: '#0c3d50' }}
-                  onClick={() => history.push('/mvpreport')}
+                  onClick={() => history.push('/mvpreport3')}
                 >
                   View
                 </Button>
@@ -91,7 +91,7 @@ function HomePage() {
               <td>
                 <Button
                   style={{ color: '#0c3d50' }}
-                  onClick={() => history.push('/mvpreport')}
+                  onClick={() => history.push('/mvpreport4')}
                 >
                   View
                 </Button>
@@ -111,7 +111,7 @@ function HomePage() {
               <td>
                 <Button
                   style={{ color: '#0c3d50' }}
-                  onClick={() => history.push('/mvpreport')}
+                  onClick={() => history.push('/mvpreport5')}
                 >
                   View
                 </Button>
@@ -131,7 +131,7 @@ function HomePage() {
               <td>
                 <Button
                   style={{ color: '#0c3d50' }}
-                  onClick={() => history.push('/mvpreport')}
+                  onClick={() => history.push('/mvpreport6')}
                 >
                   View
                 </Button>
@@ -151,7 +151,7 @@ function HomePage() {
               <td>
                 <Button
                   style={{ color: '#0c3d50' }}
-                  onClick={() => history.push('/mvpreport')}
+                  onClick={() => history.push('/mvpreport7')}
                 >
                   View
                 </Button>
