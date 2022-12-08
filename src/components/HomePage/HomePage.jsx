@@ -46,7 +46,9 @@ function HomePage() {
   return (
     <div className="container">
       <center>
-        <h1>#Welcome!</h1>
+        <h1>#Home</h1>
+        <h4>You have new applicants for funding </h4>
+        <p>View reports or add a founder to your dashboard.</p>
         <Button style={{ backgroundColor: '#1cefb9', color: '#0c3d50'}} onClick={handleClickOpen}>Invite a Founder</Button>
         <Dialog open={open} onClose={handleClose}>
           <DialogTitle>Invite a Founder</DialogTitle>
@@ -77,22 +79,25 @@ function HomePage() {
             <th>Name</th>
             <th>Company</th>
             <th>Submit Date</th>
-            <th>Valuation</th>
+            <th>Risk</th>
             <th>Founder Report</th>
+            <th>Add to Dashboard</th>
           </tr>
           <tr>
             <td>Charlotte</td>
             <td>Foresight</td>
             <td>08/26/2022 11:00</td>
-            <td>$10M</td>
+            <td>Low</td>
             <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
           </tr>
           <tr>
             <td>Meaghan</td>
             <td>Prime</td>
             <td>11/23/2022 11:19</td>
-            <td>$15M</td>
+            <td>Medium</td>
             <td><Button style={{ color: '#0c3d50'}}>View</Button><Button style={{ color: '#0c3d50'}}><DownloadIcon /></Button></td>
+            <td><Button style={{ color: '#0c3d50'}}>ADD</Button></td>
           </tr>
           </tbody>
         </table>
