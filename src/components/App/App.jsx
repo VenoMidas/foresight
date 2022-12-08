@@ -16,8 +16,10 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import HomePage from '../HomePage/HomePage';
 import FounderProfile from '../FounderProfile/FounderProfile';
 import RegisterFounderPage from '../RegisterFounder/RegisterFounderPage';
-import MvpReport from '../MvpReport/MvpReport';
 import CdfiDashboard from '../CdfiDashboard/CdfiDashboard';
+// MVP Reports
+import MvpReport from '../MvpReport/MvpReport';
+import MvpReport2 from '../MvpReport/MvpReport2';
 // Questionnarie imports
 import Start from '../Start/Start';
 import Introduction from '../Introduction/Introduction';
@@ -124,6 +126,10 @@ function App() {
 
           <ProtectedRoute exact path="/mvpreport">
             <MvpReport />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport2">
+            <MvpReport2 />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/cdfidashboard">

@@ -51,7 +51,7 @@ function HomePage() {
               <td>
                 <Button
                   style={{ color: '#0c3d50' }}
-                  onClick={() => history.push('/mvpreport')}
+                  onClick={() => history.push('/mvpreport2')}
                 >
                   View
                 </Button>
