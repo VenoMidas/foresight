@@ -37,6 +37,62 @@ function CdfiDashboard() {
             <th>MVP Report</th>
             <th>Action</th>
           </tr>
+          <tr>
+            <td>Cyle Dressel</td>
+            <td>cd@gmail.com</td>
+            <td>Dress Barn</td>
+            <td>Excellent Selection</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
+          <tr>
+            <td>Kyle VanTassell</td>
+            <td>kvt@gmail.com</td>
+            <td>Fish & Chippy</td>
+            <td>Very High</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
+          <tr>
+            <td>Tendie Vandressen</td>
+            <td>tvd@gmail.com</td>
+            <td>Butter & Bread Cafe</td>
+            <td>Fantastic Products</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
+          <tr>
+            <td>Francis Longerland</td>
+            <td>fll@gmail.com</td>
+            <td>Fishing Outfitters</td>
+            <td>Very Good</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
+          <tr>
+            <td>Maura Tannenbaum</td>
+            <td>mtb@gmail.com</td>
+            <td>Dalmatian Mousery</td>
+            <td>Extremely Unique Services</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
+          <tr>
+            <td>Vincent D'Onofrio</td>
+            <td>vdo@gmail.com</td>
+            <td>Galaxy Accumulation</td>
+            <td>Low Viability</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
+          <tr>
+            <td>Steve Zissou</td>
+            <td>stevez@gmail.com</td>
+            <td>Aquatic Exploration</td>
+            <td>Extremely Unique Services</td>
+            <td>View Report</td>
+            <td>Contact</td>
+          </tr>
         </tbody>
       </table>
     </center>
