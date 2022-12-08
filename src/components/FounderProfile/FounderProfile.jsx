@@ -1,23 +1,22 @@
-import React from 'react';
-import { styled } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import graphOne from '../../images/Dashboard_Graph_1.jpg';
-import graphTwo from '../../images/Dashboard_Graph_2.jpg';
-import graphThree from '../../images/Dashboard_Graph_3.jpg';
-import graphFour from '../../images/Dashboard_Graph_4.jpg';
-import graphFive from '../../images/Dashboard_Graph_5.jpg';
+import React from 'react'
+import { styled } from '@mui/material/styles'
+import Box from '@mui/material/Box'
+import Paper from '@mui/material/Paper'
+import Grid from '@mui/material/Grid'
+import Card from '@mui/material/Card'
+import CardContent from '@mui/material/CardContent'
+import CardMedia from '@mui/material/CardMedia'
+import graphOne from '../../images/Dashboard_Graph_1.jpg'
+import graphTwo from '../../images/Dashboard_Graph_2.jpg'
+import graphThree from '../../images/Dashboard_Graph_3.jpg'
+import graphFour from '../../images/Dashboard_Graph_4.jpg'
+import graphFive from '../../images/Dashboard_Graph_5.jpg'
 
 function FounderProfile() {
-
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: 'lightGrey',
-    padding: 2
-  }));
+    padding: 2,
+  }))
 
   return (
     <center className="container">
@@ -27,10 +26,22 @@ function FounderProfile() {
           <Grid item xs={8}>
             <Item>
               <Card sx={{ display: 'flex', maxWidth: 1200 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    textAlign: 'left',
+                  }}
+                >
                   <CardContent sx={{ flex: '1 0 auto' }}>
-                    <h3><u>Your Fundability</u></h3>
-                    <CardMedia component="img" sx={{ width: 600 }} image={graphOne} />
+                    <h3>
+                      <u>Your Fundability</u>
+                    </h3>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 600 }}
+                      image={graphOne}
+                    />
                     <br />
                   </CardContent>
                 </Box>
@@ -40,10 +51,22 @@ function FounderProfile() {
           <Grid item xs={3.4}>
             <Item>
               <Card sx={{ display: 'flex', maxWidth: 1200 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    textAlign: 'left',
+                  }}
+                >
                   <CardContent sx={{ flex: '1 0 auto' }}>
-                    <h3><u>Your Fundability</u></h3>
-                    <CardMedia component="img" sx={{ width: 275 }} image={graphTwo} />
+                    <h3>
+                      <u>Your Fundability</u>
+                    </h3>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 275 }}
+                      image={graphTwo}
+                    />
                     <br />
                   </CardContent>
                 </Box>
@@ -54,7 +77,11 @@ function FounderProfile() {
             <Item>
               <Card>
                 <CardContent>
-                  <CardMedia component="img" sx={{ width: 800 }} image={graphThree} />
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 800 }}
+                    image={graphThree}
+                  />
                 </CardContent>
               </Card>
             </Item>
@@ -62,9 +89,19 @@ function FounderProfile() {
           <Grid item xs={3.4}>
             <Item>
               <Card sx={{ display: 'flex', maxWidth: 1200 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    textAlign: 'left',
+                  }}
+                >
                   <CardContent sx={{ flex: '1 0 auto' }}>
-                    <CardMedia component="img" sx={{ width: 275 }} image={graphFour} />
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 275 }}
+                      image={graphFour}
+                    />
                     <br />
                     <br />
                   </CardContent>
@@ -75,10 +112,22 @@ function FounderProfile() {
           <Grid item xs={11.4}>
             <Item>
               <Card sx={{ display: 'flex', maxWidth: 1200 }}>
-                <Box sx={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    textAlign: 'left',
+                  }}
+                >
                   <CardContent sx={{ flex: '1 0 auto' }}>
-                    <h3><u>Your Fundability</u></h3>
-                    <CardMedia component="img" sx={{ width: 1050 }} image={graphFive} />
+                    <h3>
+                      <u>Your Fundability</u>
+                    </h3>
+                    <CardMedia
+                      component="img"
+                      sx={{ width: 1050 }}
+                      image={graphFive}
+                    />
                     <br />
                   </CardContent>
                 </Box>
@@ -88,7 +137,7 @@ function FounderProfile() {
         </Grid>
       </Box>
     </center>
-  );
+  )
 }
 
-export default FounderProfile;
+export default FounderProfile
