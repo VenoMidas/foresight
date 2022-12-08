@@ -5,9 +5,15 @@ const {
 const pool = require('../modules/pool');
 const router = express.Router();
 
+// GET response for submissions for specific CDFI
+// router.get('/:id', (req, res) => {
+//     console.log('/response GET all route');
+//     let queryText = ``
+// })
+
 // GET response for specific question?
 router.get('/:id', (req, res) => {
-    console.log('/response GET route');
+    console.log('/response GET specific route');
     let queryText = `SELECT "response"."response" FROM "response"
                      JOIN "question" ON "question"."id" = "response"."question_id"
                      WHERE "question"."id" = $1`;
