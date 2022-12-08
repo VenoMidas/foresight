@@ -20,6 +20,11 @@ import CdfiDashboard from '../CdfiDashboard/CdfiDashboard';
 // MVP Reports
 import MvpReport from '../MvpReport/MvpReport';
 import MvpReport2 from '../MvpReport/MvpReport2';
+import MvpReport3 from '../MvpReport/MvpReport3';
+import MvpReport4 from '../MvpReport/MvpReport4';
+import MvpReport5 from '../MvpReport/MvpReport5';
+import MvpReport6 from '../MvpReport/MvpReport6';
+import MvpReport7 from '../MvpReport/MvpReport';
 // Questionnarie imports
 import Start from '../Start/Start';
 import Introduction from '../Introduction/Introduction';
@@ -130,6 +135,26 @@ function App() {
 
           <ProtectedRoute exact path="/mvpreport2">
             <MvpReport2 />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport3">
+            <MvpReport3 />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport4">
+            <MvpReport4 />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport5">
+            <MvpReport5 />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport6">
+            <MvpReport6 />
+          </ProtectedRoute>
+
+          <ProtectedRoute exact path="/mvpreport7">
+            <MvpReport7 />
           </ProtectedRoute>
 
           <ProtectedRoute exact path="/cdfidashboard">
