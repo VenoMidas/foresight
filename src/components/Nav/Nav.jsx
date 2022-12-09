@@ -36,8 +36,7 @@ function Nav() {
         <AppBar
           position="fixed"
           sx={{
-            width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
+            zIndex: (theme) => theme.zIndex.drawer, 
             bgcolor: '#0c3d50',
           }}
         >
