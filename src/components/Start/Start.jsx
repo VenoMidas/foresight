@@ -11,7 +11,7 @@ const Start = () => {
             <Box>
                 <h2>Welcome to #foresight</h2>
                 <p>Please fill out the following questionnaire</p>
-                <Button onClick={() => history.push('/introduction')}>Start</Button>
+                <Button onClick={() => history.push('/introduction')} style={{ backgroundColor: '#1cefb9', color: '#0c3d50' }}>Start</Button>
             </Box>
         </center>
         </div>

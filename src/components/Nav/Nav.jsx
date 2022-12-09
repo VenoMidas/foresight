@@ -36,7 +36,7 @@ function Nav() {
         <AppBar
           position="fixed"
           sx={{
-            zIndex: (theme) => theme.zIndex.drawer, 
+            zIndex: (theme) => theme.zIndex.drawer,
             bgcolor: '#083546',
           }}
         >

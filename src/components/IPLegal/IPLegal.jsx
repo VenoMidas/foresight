@@ -124,8 +124,9 @@ const IPLegal = () => {
                     )
                 })}
                 <br />
-                <Button onClick={() => history.push('/product/market')}>Back</Button>
-                <Button type="submit">Review</Button>
+                <br />
+                <Button onClick={() => history.push('/product/market')} color="error">Back</Button>
+                <Button type="submit" style={{ color: '#0c3d50' }}>Review</Button>
                 </form>
             </Box>
         </center>

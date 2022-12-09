@@ -124,8 +124,9 @@ const ProductMarket = () => {
                     )
                 })}
                 <br />
-                <Button onClick={() => history.push('/business/model')}>Back</Button>
-                <Button type="submit">Continue</Button>
+                <br />
+                <Button onClick={() => history.push('/business/model')} color="error">Back</Button>
+                <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
                 </form>
             </Box>
         </center>
