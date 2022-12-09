@@ -1,6 +1,5 @@
 import React from 'react'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import './CdfiDashboard.css'
 import Button from '@mui/material/Button'
 import TextField from '@mui/material/TextField'
@@ -9,11 +8,10 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
+import Footer from '../Footer/Footer'
 
 function CdfiDashboard() {
-  const [dashboardSubmissions, setDashboardSubmissions] = useState([])
   const [open, setOpen] = useState(false)
-  // holds email address that will get a link for RegisterForm
   const [email, setEmail] = useState('')
 
   const handleClickOpen = () => {
@@ -25,43 +23,11 @@ function CdfiDashboard() {
   }
 
   const handleInvite = () => {
-    handleEmail()
     setOpen(false)
     console.log(
       'Send Email to supplied email address. Logout and navigate to localhost:3000/#/register/founder to register a founder',
     )
   }
-
-  // function that POST email
-  const handleEmail = () => {
-    axios
-      .post('/api/email', {
-        email: email,
-      })
-      .then(() => {
-        alert('Have founder check their email')
-      })
-      .catch((err) => {
-        console.log('err in handleEmail', err)
-      })
-  }
-
-  useEffect(() => {
-    // getDashboardSubmissions();
-  }, [])
-
-  // Get dashboard submissions
-  // getDashboardSubmissions = () => {
-  //   console.log('in getDashboardSubmissions');
-  //   axios.get('/api/response')
-  //     .then((response) => {
-  //       setDashboardSubmissions(response.data);
-  //       console.log(response);
-  //     }).catch((error) => {
-  //       console.log(error);
-  //       alert('Something went wrong.');
-  //     });
-  // };
 
   return (
     <center className="container">
@@ -176,6 +142,7 @@ function CdfiDashboard() {
           </tr>
         </tbody>
       </table>
+      <Footer />
     </center>
   )
 }

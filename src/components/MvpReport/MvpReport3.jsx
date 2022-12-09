@@ -68,7 +68,7 @@ function MvpReport3() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>94</h1>
+                    <h1>92</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -120,19 +120,19 @@ function MvpReport3() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Foresight</strong>
+                    Company: <strong>Butter & Bread Cafe</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong>
+                    Founder(s): <strong>Tendie Vandressen</strong>
                   </p>
                   <p>
-                    Industries: <strong>Fintech, Big Data</strong>
+                    Industries: <strong>Food</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Missouri, USA</strong>
+                    Headquarter Location: <strong>St. Paul, MN</strong>
                   </p>
                   <p>
-                    Website: <strong>www.tryforesight.com</strong>
+                    Website: <strong>www.butter&bread.com</strong>
                   </p>
                 </CardContent>
               </Card>

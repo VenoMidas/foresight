@@ -11,6 +11,7 @@ import graphTwo from '../../images/Dashboard_Graph_2.jpg'
 import graphThree from '../../images/Dashboard_Graph_3.jpg'
 import graphFour from '../../images/Dashboard_Graph_4.jpg'
 import graphFive from '../../images/Dashboard_Graph_5.jpg'
+import Footer from '../Footer/Footer'
 
 function FounderProfile() {
   const Item = styled(Paper)(({ theme }) => ({
@@ -136,6 +137,9 @@ function FounderProfile() {
           </Grid>
         </Grid>
       </Box>
+      <br />
+      <br />
+      <Footer />
     </center>
   )
 }

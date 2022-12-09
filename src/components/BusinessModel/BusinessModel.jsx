@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 const BusinessModel = () => {
     const history = useHistory();
@@ -82,50 +83,55 @@ const BusinessModel = () => {
 
     return (
         <div className='container'>
-        <center>
-            <Box>
-                <ProgressBar step={3} />
-                <h2>Business Model</h2>
-                <form onSubmit={handleSubmit}>
-                {businessModelQuestions.map(question => {
-                    let choiceCheck = false;
-                    for (let i = 0; i < businessModelQuestionChoices.length; i++) {
-                        if (question.id === businessModelQuestionChoices[i].question_id) {
-                            choiceCheck = true;
-                        }
-                    }
-                    return (
-                        <>
-                            <h4>{question.question}</h4>
-                            {choiceCheck ?
-                                <Select
-                                    name={question.id - 16}
-                                    value={responseList[question.id - 16].response}
-                                    onChange={handleResponseListChange}
-                                >
-                                    {businessModelQuestionChoices.map(choice => {
-                                        if (choice.question_id === question.id) {
-                                            return (
-                                                <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
-                                            )
-                                        }
-                                    })}
-                                </Select>
-                                :
-                                <TextField
-                                    name={question.id - 16}
-                                    onChange={handleResponseListChange}
-                                >
-                                </TextField>}
-                        </>
-                    )
-                })}
+            <center>
+                <Box>
+                    <ProgressBar step={3} />
+                    <br />
+                    <h1 sx={{ color: '#0c3d50' }}>#Business Model</h1>
+                    <form onSubmit={handleSubmit}>
+                        {businessModelQuestions.map(question => {
+                            let choiceCheck = false;
+                            for (let i = 0; i < businessModelQuestionChoices.length; i++) {
+                                if (question.id === businessModelQuestionChoices[i].question_id) {
+                                    choiceCheck = true;
+                                }
+                            }
+                            return (
+                                <>
+                                    <h4>{question.question}</h4>
+                                    {choiceCheck ?
+                                        <Select
+                                            name={question.id - 16}
+                                            value={responseList[question.id - 16].response}
+                                            onChange={handleResponseListChange}
+                                        >
+                                            {businessModelQuestionChoices.map(choice => {
+                                                if (choice.question_id === question.id) {
+                                                    return (
+                                                        <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
+                                                    )
+                                                }
+                                            })}
+                                        </Select>
+                                        :
+                                        <TextField
+                                            name={question.id - 16}
+                                            onChange={handleResponseListChange}
+                                        >
+                                        </TextField>}
+                                </>
+                            )
+                        })}
+                        <br />
+                        <br />
+                        <Button onClick={() => history.push('/team')} color="error">Back</Button>
+                        <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
+                    </form>
+                </Box>
                 <br />
-                <Button onClick={() => history.push('/team')}>Back</Button>
-                <Button type="submit">Continue</Button>
-                </form>
-            </Box>
-        </center>
+                <br />
+                <Footer />
+            </center>
         </div>
     )
 }

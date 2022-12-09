@@ -68,7 +68,7 @@ function MvpReport4() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>94</h1>
+                    <h1>92</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -120,19 +120,19 @@ function MvpReport4() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Foresight</strong>
+                    Company: <strong>Fishing Outfitters</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong>
+                    Founder(s): <strong>Francis Longerland</strong>
                   </p>
                   <p>
-                    Industries: <strong>Fintech, Big Data</strong>
+                    Industries: <strong>Clothing, Merchandise</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Missouri, USA</strong>
+                    Headquarter Location: <strong>Colorado Springs, CO</strong>
                   </p>
                   <p>
-                    Website: <strong>www.tryforesight.com</strong>
+                    Website: <strong>www.fishingoutfitters.com</strong>
                   </p>
                 </CardContent>
               </Card>

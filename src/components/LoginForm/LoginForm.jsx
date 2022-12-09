@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux';
+import Button from '@mui/material/Button';
 
 function LoginForm() {
   const [username, setUsername] = useState('');
@@ -26,7 +27,7 @@ function LoginForm() {
 
   return (
     <form className="formPanel" onSubmit={login}>
-      <h2>Login</h2>
+      <h1 sx={{ color: '#0c3d50' }}>#Login</h1>
       {errors.loginMessage && (
         <h3 className="alert" role="alert">
           {errors.loginMessage}
@@ -56,8 +57,9 @@ function LoginForm() {
           />
         </label>
       </div>
+      <br />
       <div>
-        <input className="btn" type="submit" name="submit" value="Log In" />
+        <Button type="submit" name="submit" style={{ backgroundColor: '#0c3d50', color: 'white' }}>Log In</Button>
       </div>
     </form>
   );

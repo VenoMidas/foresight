@@ -1,29 +1,27 @@
 import React from 'react';
-
-// This is one of our simplest components
-// It doesn't have local state,
-// It doesn't dispatch any redux actions or display any part of redux state
-// or even care what the redux state is'
+import './AboutPage.css';
+import Footer from '../Footer/Footer';
 
 function AboutPage() {
   return (
     <center className="container">
       <div>
-        <h2>About</h2>
+      <h1>#About</h1>
         <h3>Technologies Used:</h3>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Javascript</li>
-          <li>React</li>
-          <li>Redux</li>
-          <li>Material UI</li>
-          <li>Node.js</li>
-          <li>Express.js</li>
-          <li>PostgreSQL</li>
-          <li>Postman</li>
-        </ul>
+          <p>HTML</p>
+          <p>CSS</p>
+          <p>Javascript</p>
+          <p>React</p>
+          <p>Redux</p>
+          <p>Material UI</p>
+          <p>Node.js</p>
+          <p>Express.js</p>
+          <p>PostgreSQL</p>
+          <p>Postman</p>
       </div>
+      <br />
+      <br />
+      <Footer />
     </center>
   );
 }
