@@ -3,6 +3,7 @@ import React from 'react'
 import Button from '@mui/material/Button'
 import DownloadIcon from '@mui/icons-material/Download'
 import { useHistory } from 'react-router-dom'
+import Footer from '../Footer/Footer'
 
 function HomePage() {
   const history = useHistory()
@@ -165,6 +166,7 @@ function HomePage() {
             </tr>
           </tbody>
         </table>
+        <Footer />
       </center>
     </div>
   )

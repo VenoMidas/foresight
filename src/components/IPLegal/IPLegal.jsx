@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 const IPLegal = () => {
     const history = useHistory();
@@ -51,8 +52,8 @@ const IPLegal = () => {
             });
     };
 
-     // This could be moved to the server down the road
-     const handleResponseList = (questionObjectArray) => {
+    // This could be moved to the server down the road
+    const handleResponseList = (questionObjectArray) => {
         // call response list outside of loop
         const responseListCopy = [...responseList];
         for (let i = 0; i < questionObjectArray.length; i += 1) {
@@ -84,51 +85,56 @@ const IPLegal = () => {
 
     return (
         <div className='container'>
-        <center>
-            <Box>
-                <ProgressBar step={5} />
-                <h2>IP and Legal</h2>
-                <form onSubmit={handleSubmit}>
-                {ipLegalQuestions.map(question => {
-                    // check if question.id matches a choice.question_id
-                    let choiceCheck = false;
-                    for (let i = 0; i < ipLegalQuestionChoices.length; i++) {
-                        if (question.id === ipLegalQuestionChoices[i].question_id) {
-                            choiceCheck = true;
-                        }
-                    }
-                    return (
-                        <>
-                            <h4>{question.question}</h4>
-                            {choiceCheck ?
-                                <Select
-                                    name={question.id - 38}
-                                    value={responseList[question.id - 38].response}
-                                    onChange={handleResponseListChange}
-                                >
-                                    {ipLegalQuestionChoices.map(choice => {
-                                        if (choice.question_id === question.id) {
-                                            return (
-                                                <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
-                                            )
-                                        }
-                                    })}
-                                </Select>
-                                :
-                                <TextField
-                                    name={question.id - 38}
-                                    onChange={handleResponseListChange}
-                                >
-                                </TextField>}
-                        </>
-                    )
-                })}
+            <center>
+                <Box>
+                    <ProgressBar step={5} />
+                    <br />
+                    <h1 sx={{ color: '#0c3d50' }}>#IP and Legal</h1>
+                    <form onSubmit={handleSubmit}>
+                        {ipLegalQuestions.map(question => {
+                            // check if question.id matches a choice.question_id
+                            let choiceCheck = false;
+                            for (let i = 0; i < ipLegalQuestionChoices.length; i++) {
+                                if (question.id === ipLegalQuestionChoices[i].question_id) {
+                                    choiceCheck = true;
+                                }
+                            }
+                            return (
+                                <>
+                                    <h4>{question.question}</h4>
+                                    {choiceCheck ?
+                                        <Select
+                                            name={question.id - 38}
+                                            value={responseList[question.id - 38].response}
+                                            onChange={handleResponseListChange}
+                                        >
+                                            {ipLegalQuestionChoices.map(choice => {
+                                                if (choice.question_id === question.id) {
+                                                    return (
+                                                        <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
+                                                    )
+                                                }
+                                            })}
+                                        </Select>
+                                        :
+                                        <TextField
+                                            name={question.id - 38}
+                                            onChange={handleResponseListChange}
+                                        >
+                                        </TextField>}
+                                </>
+                            )
+                        })}
+                        <br />
+                        <br />
+                        <Button onClick={() => history.push('/product/market')} color="error">Back</Button>
+                        <Button type="submit" style={{ color: '#0c3d50' }}>Review</Button>
+                    </form>
+                </Box>
                 <br />
-                <Button onClick={() => history.push('/product/market')}>Back</Button>
-                <Button type="submit">Review</Button>
-                </form>
-            </Box>
-        </center>
+                <br />
+                <Footer />
+            </center>
         </div>
     )
 }

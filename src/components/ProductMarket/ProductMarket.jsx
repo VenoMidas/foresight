@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 const ProductMarket = () => {
     const history = useHistory();
@@ -51,8 +52,8 @@ const ProductMarket = () => {
             });
     };
 
-     // This could be moved to the server down the road
-     const handleResponseList = (questionObjectArray) => {
+    // This could be moved to the server down the road
+    const handleResponseList = (questionObjectArray) => {
         // call response list outside of loop
         const responseListCopy = [...responseList];
         for (let i = 0; i < questionObjectArray.length; i += 1) {
@@ -84,52 +85,57 @@ const ProductMarket = () => {
     console.log('response list', responseList)
     return (
         <div className='container'>
-        <center>
-            <Box>
-                <ProgressBar step={4} />
-                <h2>Product Market</h2>
-                <form onSubmit={handleSubmit}>
-                {productMarketQuestions.map(question => {
-                    // check if question.id matches a choice.question_id
-                    let choiceCheck = false;
-                    for (let i = 0; i < productMarketQuestionChoices.length; i++) {
-                        if (question.id === productMarketQuestionChoices[i].question_id) {
-                            choiceCheck = true;
-                        }
-                    }
-                    return (
-                        <>
-                            <h4>{question.question}</h4>
-                            {choiceCheck ?
-                                <Select
-                                    name={question.id - 24}
-                                    value={responseList[question.id - 24].response}
-                                    onChange={handleResponseListChange}
-                                >
-                                    {productMarketQuestionChoices.map(choice => {
-                                        if (choice.question_id === question.id) {
-                                            return (
-                                                <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
-                                            )
-                                        }
-                                    })}
-                                </Select>
-                                :
-                                <TextField
-                                    name={question.id - 24}
-                                    onChange={handleResponseListChange}
-                                >
-                                </TextField>}
-                        </>
-                    )
-                })}
+            <center>
+                <Box>
+                    <ProgressBar step={4} />
+                    <br />
+                    <h1 sx={{ color: '#0c3d50' }}>#Product Market</h1>
+                    <form onSubmit={handleSubmit}>
+                        {productMarketQuestions.map(question => {
+                            // check if question.id matches a choice.question_id
+                            let choiceCheck = false;
+                            for (let i = 0; i < productMarketQuestionChoices.length; i++) {
+                                if (question.id === productMarketQuestionChoices[i].question_id) {
+                                    choiceCheck = true;
+                                }
+                            }
+                            return (
+                                <>
+                                    <h4>{question.question}</h4>
+                                    {choiceCheck ?
+                                        <Select
+                                            name={question.id - 24}
+                                            value={responseList[question.id - 24].response}
+                                            onChange={handleResponseListChange}
+                                        >
+                                            {productMarketQuestionChoices.map(choice => {
+                                                if (choice.question_id === question.id) {
+                                                    return (
+                                                        <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
+                                                    )
+                                                }
+                                            })}
+                                        </Select>
+                                        :
+                                        <TextField
+                                            name={question.id - 24}
+                                            onChange={handleResponseListChange}
+                                        >
+                                        </TextField>}
+                                </>
+                            )
+                        })}
+                        <br />
+                        <br />
+                        <Button onClick={() => history.push('/business/model')} color="error">Back</Button>
+                        <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
+                    </form>
+                </Box>
                 <br />
-                <Button onClick={() => history.push('/business/model')}>Back</Button>
-                <Button type="submit">Continue</Button>
-                </form>
-            </Box>
-        </center>
-    </div>
+                <br />
+                <Footer />
+            </center>
+        </div>
     )
 }
 

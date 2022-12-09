@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 const Introduction = () => {
     const history = useHistory();
@@ -87,7 +88,8 @@ const Introduction = () => {
         <center>
             <Box>
                 <ProgressBar step={1} />
-                <h2>Introduction</h2>
+                <br />
+                <h1 sx={{ color: '#0c3d50' }}>#Introduction</h1>
                 <form onSubmit={handleSubmit}>
                 {introductionQuestions.map(question => {
                     // check if question.id matches a choice.question_id
@@ -124,10 +126,14 @@ const Introduction = () => {
                     )
                 })}
                 <br />
-                <Button onClick={() => history.push('/start')}>Cancel</Button>
-                <Button type="submit">Continue</Button>
+                <br />
+                <Button onClick={() => history.push('/start')} color="error">Cancel</Button>
+                <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
                 </form>
             </Box>
+            <br />
+            <br />
+            <Footer />
         </center>
         </div>
     )

@@ -36,9 +36,8 @@ function Nav() {
         <AppBar
           position="fixed"
           sx={{
-            width: `calc(100% - ${drawerWidth}px)`,
-            ml: `${drawerWidth}px`,
-            bgcolor: '#0c3d50',
+            zIndex: (theme) => theme.zIndex.drawer,
+            bgcolor: '#083546',
           }}
         >
           <Toolbar>
@@ -60,7 +59,7 @@ function Nav() {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: 'border-box',
-              backgroundColor: '#0c3d50',
+              backgroundColor: '#083546',
             },
           }}
           variant="permanent"
