@@ -68,7 +68,7 @@ function MvpReport() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>94</h1>
+                    <h1>96</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -106,7 +106,7 @@ function MvpReport() {
                     }}
                   >
                     <p>Favorable</p>
-                    <h1>M</h1>
+                    <h1>H</h1>
                   </Box>
                 </CardContent>
               </Card>
@@ -120,19 +120,19 @@ function MvpReport() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Foresight</strong>
+                    Company: <strong>Dress Barn</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong>
+                    Founder(s): <strong>Cyle Dressel</strong>
                   </p>
                   <p>
-                    Industries: <strong>Fintech, Big Data</strong>
+                    Industries: <strong>Sales</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Missouri, USA</strong>
+                    Headquarter Location: <strong> Mahwah, NJ</strong>
                   </p>
                   <p>
-                    Website: <strong>www.tryforesight.com</strong>
+                    Website: <strong>www.dressbarn.com</strong>
                   </p>
                 </CardContent>
               </Card>

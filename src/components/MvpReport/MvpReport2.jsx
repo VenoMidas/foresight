@@ -68,7 +68,7 @@ function MvpReport2() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>94</h1>
+                    <h1>95</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -120,19 +120,19 @@ function MvpReport2() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Foresight</strong>
+                    Company: <strong>Fish & Chippy</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong>
+                    Founder(s): <strong>Kyle VanTassell</strong>
                   </p>
                   <p>
-                    Industries: <strong>Fintech, Big Data</strong>
+                    Industries: <strong>Food</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Missouri, USA</strong>
+                    Headquarter Location: <strong>Minneapolis, MN</strong>
                   </p>
                   <p>
-                    Website: <strong>www.tryforesight.com</strong>
+                    Website: <strong>www.fish&chippy.com</strong>
                   </p>
                 </CardContent>
               </Card>
