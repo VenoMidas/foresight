@@ -1,18 +1,24 @@
 # foresight
 
-Early stage founders need capital to grow however assessing tech startups is different than traditional small business. #foresight helps bridge the gap between traditional small business and startups by providing an assessment for financial institutes to assist in funding decisions.
+Early stage founders need capital to grow, however, assessing tech startups is different than assessing traditional small businesses. #foresight helps bridge the gap between the traditional small business and startups by providing an assessment for financial institutes to assist in funding decisions.
 
 ## Screenshot
-![Screenshot](./public/images/welcome.png)
-![Screenshot](./public/images/founder.png)
+![Screenshot](./public/images/screenshottwo.png)
+![Screenshot](./public/images/screenshot.png)
 
 ### Usage
 
-1. As a user I want to be able to...
+1. As a founder, I want to to fill out a questionnaire about my company
+2. As a founder, I want to view information about my company and how I present to investors
+3. As a financial investor, I want to invite founders to join #foresight and fill out a questionnaire
+4. As a financial investor, I want to see founders from the area that are using #foresight and looking to raise funds for their company
+5. As a financial investor, I want to see all of my added and invited founders with their contact information on my home page
 
 ### Roadmap/Future Features
 
-1. Example... Admin view to change questions ...
+1. Founder Email functionality
+2. Review and edit questionnaire before submitting
+3. Admin user and login view to change visible questionnaire questions
 
 ## Getting Started
 
@@ -97,11 +103,11 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Alex Carufel - *Initial Work* - add github link here
-* **Meaghan Reinschmidt - *Initial Work* - add github link here
+* **Alex Carufel - *Initial Work* - [Caraul42](https://github.com/Carual42)
+* **Meaghan Reinschmidt - *Initial Work* - [meaghanreinschmidt](https://github.com/meaghanreinschmidt)
 * **Mark Schumacher - *Initial Work* - [VenoMidas](https://github.com/VenoMidas)
-* **Brianna Oliveira - *Initial Work* - add github link here
-* **Kyle VanTassel - *Initial Work* - add github link here
+* **Brianna Oliveira - *Initial Work* - [briolive](https://github.com/briolive)
+* **Kyle VanTassel - *Initial Work* - [0cticon](https://github.com/0cticon)
 
 See also the list of [contributors](https://github.com/VenoMidas/foresight/graphs/contributors) who participated in this project.
 
