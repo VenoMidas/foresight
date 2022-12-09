@@ -37,7 +37,7 @@ function Nav() {
           position="fixed"
           sx={{
             zIndex: (theme) => theme.zIndex.drawer, 
-            bgcolor: '#0c3d50',
+            bgcolor: '#083546',
           }}
         >
           <Toolbar>
@@ -59,7 +59,7 @@ function Nav() {
             [`& .MuiDrawer-paper`]: {
               width: drawerWidth,
               boxSizing: 'border-box',
-              backgroundColor: '#0c3d50',
+              backgroundColor: '#083546',
             },
           }}
           variant="permanent"
