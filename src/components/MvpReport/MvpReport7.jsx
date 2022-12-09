@@ -68,7 +68,7 @@ function MvpReport7() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>94</h1>
+                    <h1>90</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -106,7 +106,7 @@ function MvpReport7() {
                     }}
                   >
                     <p>Favorable</p>
-                    <h1>M</h1>
+                    <h1>M -</h1>
                   </Box>
                 </CardContent>
               </Card>
@@ -120,19 +120,19 @@ function MvpReport7() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Foresight</strong>
+                    Company: <strong>Aqautic Exploration</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong>
+                    Founder(s): <strong>Steve Zissou</strong>
                   </p>
                   <p>
-                    Industries: <strong>Fintech, Big Data</strong>
+                    Industries: <strong>Aquatics, Research</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Missouri, USA</strong>
+                    Headquarter Location: <strong>San Diego, CA</strong>
                   </p>
                   <p>
-                    Website: <strong>www.tryforesight.com</strong>
+                    Website: <strong>www.aquaticexploration.com</strong>
                   </p>
                 </CardContent>
               </Card>

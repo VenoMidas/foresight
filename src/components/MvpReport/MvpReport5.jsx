@@ -68,7 +68,7 @@ function MvpReport5() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>94</h1>
+                    <h1>97</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -106,7 +106,7 @@ function MvpReport5() {
                     }}
                   >
                     <p>Favorable</p>
-                    <h1>M</h1>
+                    <h1>H</h1>
                   </Box>
                 </CardContent>
               </Card>
@@ -120,19 +120,19 @@ function MvpReport5() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Foresight</strong>
+                    Company: <strong>Dalmatian Mousery</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Jannae Gammage, Charlotte Clark</strong>
+                    Founder(s): <strong>Maura Tannenbaum</strong>
                   </p>
                   <p>
-                    Industries: <strong>Fintech, Big Data</strong>
+                    Industries: <strong>Animals, Pet Merchandise</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Missouri, USA</strong>
+                    Headquarter Location: <strong>New York City, NY</strong>
                   </p>
                   <p>
-                    Website: <strong>www.tryforesight.com</strong>
+                    Website: <strong>www.dalmatianmousery.com</strong>
                   </p>
                 </CardContent>
               </Card>
