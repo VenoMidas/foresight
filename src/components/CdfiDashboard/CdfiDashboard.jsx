@@ -8,6 +8,7 @@ import DialogActions from '@mui/material/DialogActions'
 import DialogContent from '@mui/material/DialogContent'
 import DialogContentText from '@mui/material/DialogContentText'
 import DialogTitle from '@mui/material/DialogTitle'
+import Footer from '../Footer/Footer'
 
 function CdfiDashboard() {
   const [open, setOpen] = useState(false)
@@ -141,6 +142,7 @@ function CdfiDashboard() {
           </tr>
         </tbody>
       </table>
+      <Footer />
     </center>
   )
 }
