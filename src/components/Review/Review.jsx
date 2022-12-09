@@ -9,18 +9,18 @@ const Review = () => {
     // useSelectors here
 
     return (
-    <div className='container'>
-        <center>
-            <Box>
-                <ProgressBar step={6} />
-                <br />
-                <br />
-                <h2>Thank you for submitting!</h2>
-                <Button onClick={() => history.push('/ip/legal')} color="error">Back</Button>
-                <Button style={{ color: '#0c3d50' }}>Submit</Button>
-            </Box>
-        </center>
-    </div>
+        <div className='container'>
+            <center>
+                <Box>
+                    <ProgressBar step={6} />
+                    <br />
+                    <br />
+                    <h2>Click "Submit" to complete your form!</h2>
+                    <Button onClick={() => history.push('/ip/legal')} color="error">Back</Button>
+                    <Button style={{ color: '#0c3d50' }}>Submit</Button>
+                </Box>
+            </center>
+        </div>
     )
 }
 

@@ -8,7 +8,7 @@ import logo from '../../images/logotwo.png';
 // or even care what the redux state is, so it doesn't need 'connect()'
 
 function Footer() {
-  return <footer>&copy;<b>#foresight</b></footer>;
+  return <center><footer>&copy;<b>#foresight</b></footer></center>;
 }
 
 export default Footer;

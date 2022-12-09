@@ -85,51 +85,51 @@ const Team = () => {
 
     return (
         <div className='container'>
-        <center>
-            <Box>
-                <ProgressBar step={2} />
-                <h2>Team</h2>
-                <form onSubmit={handleSubmit}>
-                    {teamQuestions.map(question => {
-                        let choiceCheck = false;
-                        for (let i = 0; i < teamQuestionChoices.length; i++) {
-                            if (question.id === teamQuestionChoices[i].question_id) {
-                                choiceCheck = true;
+            <center>
+                <Box>
+                    <ProgressBar step={2} />
+                    <h2>Team</h2>
+                    <form onSubmit={handleSubmit}>
+                        {teamQuestions.map(question => {
+                            let choiceCheck = false;
+                            for (let i = 0; i < teamQuestionChoices.length; i++) {
+                                if (question.id === teamQuestionChoices[i].question_id) {
+                                    choiceCheck = true;
+                                }
                             }
-                        }
-                        return (
-                            <>
-                                <h4>{question.question}</h4>
-                                {choiceCheck ?
-                                    <Select
-                                        name={question.id - 6}
-                                        value={responseList[question.id - 6].response}
-                                        onChange={handleResponseListChange}
-                                    >
-                                        {teamQuestionChoices.map(choice => {
-                                            if (choice.question_id === question.id) {
-                                                return (
-                                                    <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
-                                                )
-                                            }
-                                        })}
-                                    </Select>
-                                    :
-                                    <TextField
-                                        name={question.id - 6}
-                                        onChange={handleResponseListChange}
-                                    >   
-                                    </TextField>}
-                            </>
-                        )
-                    })}
-                    <br />
-                    <br />
-                    <Button onClick={() => history.push('/introduction')} color="error">Back</Button>
-                    <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
-                </form>
-            </Box>
-        </center>
+                            return (
+                                <>
+                                    <h4>{question.question}</h4>
+                                    {choiceCheck ?
+                                        <Select
+                                            name={question.id - 6}
+                                            value={responseList[question.id - 6].response}
+                                            onChange={handleResponseListChange}
+                                        >
+                                            {teamQuestionChoices.map(choice => {
+                                                if (choice.question_id === question.id) {
+                                                    return (
+                                                        <MenuItem value={choice.choice}>{choice.choice}</MenuItem>
+                                                    )
+                                                }
+                                            })}
+                                        </Select>
+                                        :
+                                        <TextField
+                                            name={question.id - 6}
+                                            onChange={handleResponseListChange}
+                                        >
+                                        </TextField>}
+                                </>
+                            )
+                        })}
+                        <br />
+                        <br />
+                        <Button onClick={() => history.push('/introduction')} color="error">Back</Button>
+                        <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
+                    </form>
+                </Box>
+            </center>
         </div>
     )
 }
