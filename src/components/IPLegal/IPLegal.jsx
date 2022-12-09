@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 const IPLegal = () => {
     const history = useHistory();
@@ -87,7 +88,8 @@ const IPLegal = () => {
             <center>
                 <Box>
                     <ProgressBar step={5} />
-                    <h2>IP and Legal</h2>
+                    <br />
+                    <h1 sx={{ color: '#0c3d50' }}>#IP and Legal</h1>
                     <form onSubmit={handleSubmit}>
                         {ipLegalQuestions.map(question => {
                             // check if question.id matches a choice.question_id
@@ -129,6 +131,9 @@ const IPLegal = () => {
                         <Button type="submit" style={{ color: '#0c3d50' }}>Review</Button>
                     </form>
                 </Box>
+                <br />
+                <br />
+                <Footer />
             </center>
         </div>
     )

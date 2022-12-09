@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 
 const Team = () => {
@@ -88,7 +89,8 @@ const Team = () => {
             <center>
                 <Box>
                     <ProgressBar step={2} />
-                    <h2>Team</h2>
+                    <br />
+                    <h1 sx={{ color: '#0c3d50' }}>#Team</h1>
                     <form onSubmit={handleSubmit}>
                         {teamQuestions.map(question => {
                             let choiceCheck = false;
@@ -129,6 +131,9 @@ const Team = () => {
                         <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
                     </form>
                 </Box>
+                <br />
+                <br />
+                <Footer />
             </center>
         </div>
     )

@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
+import Footer from '../Footer/Footer';
 
 const BusinessModel = () => {
     const history = useHistory();
@@ -85,7 +86,8 @@ const BusinessModel = () => {
             <center>
                 <Box>
                     <ProgressBar step={3} />
-                    <h2>Business Model</h2>
+                    <br />
+                    <h1 sx={{ color: '#0c3d50' }}>#Business Model</h1>
                     <form onSubmit={handleSubmit}>
                         {businessModelQuestions.map(question => {
                             let choiceCheck = false;
@@ -126,6 +128,9 @@ const BusinessModel = () => {
                         <Button type="submit" style={{ color: '#0c3d50' }}>Continue</Button>
                     </form>
                 </Box>
+                <br />
+                <br />
+                <Footer />
             </center>
         </div>
     )
