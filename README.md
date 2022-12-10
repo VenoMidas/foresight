@@ -19,6 +19,7 @@ Early stage founders need capital to grow, however, assessing tech startups is d
 1. Founder Email functionality
 2. Review and edit questionnaire before submitting
 3. Admin user and login view to change visible questionnaire questions
+4. SSO/Token authentication 
 
 ## Getting Started
 
@@ -43,13 +44,16 @@ Before you get started, make sure you have the following software installed on y
   SERVER_SESSION_SECRET=superDuperSecret
   ```
   
-  While you're in your new `.env` file, take the time to replace `superDuperSecret` with your sendGrid
-  API Key.
+  While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string to keep your application secure. Here's a site that can help you: [https://passwordsgenerators.net/](https://passwordsgenerators.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
   
 5. Start postgres if it is not already running
 6. run `npm run server` in your terminal. (Default port is 5000, if port is in use modify `server.js` port variable.)
 7. run `npm run client` in a new terminal - this will launch the app in the browser.
-8. Navigate to `localhost:3000`
+8. Navigate to `http://localhost:3000/#/registration`
+9. Register a user here, this will create a user under the `CDFI` access_group
+10. Navigate to `localhost:3000/#/register/founder`
+11. Register a user here, this will create a user under the `FOUNDER` 
+12. You are now free to move about the application with either user!
 
 ## Running the tests
 
