@@ -3,8 +3,8 @@
 Early stage founders need capital to grow, however, assessing tech startups is different than assessing traditional small businesses. #foresight helps bridge the gap between the traditional small business and startups by providing an assessment for financial institutes to assist in funding decisions.
 
 ## Screenshot
-![Screenshot](./public/images/screenshottwo.png)
-![Screenshot](./public/images/screenshot.png)
+<img width="1435" alt="screenshottwo" src="https://user-images.githubusercontent.com/98852538/206814038-5cc0edb8-2f7f-4d9a-944d-357b25b69723.png">
+<img width="1433" alt="screenshot" src="https://user-images.githubusercontent.com/98852538/206814049-55dc8c29-f8ba-4223-9af3-56c66f8b7a3b.png">
 
 ### Usage
 
