@@ -1,7 +1,8 @@
 import React from 'react';
-
+import Button from '@mui/material/Button';
 import { useHistory } from 'react-router-dom';
 import RegisterFounderForm from './RegisterFounderForm';
+import Footer from '../Footer/Footer';
 
 function RegisterFounderPage() {
   const history = useHistory();
@@ -11,7 +12,8 @@ function RegisterFounderPage() {
       <RegisterFounderForm />
 
       <center>
-        <button
+        <Button
+          style={{ backgroundColor: '#0c3d50', color: 'white' }}
           type="button"
           className="btn btn_asLink"
           onClick={() => {
@@ -19,7 +21,10 @@ function RegisterFounderPage() {
           }}
         >
           Login
-        </button>
+        </Button>
+        <br />
+        <br />
+        <Footer />
       </center>
     </div>
   );
