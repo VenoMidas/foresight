@@ -68,7 +68,7 @@ function MvpReport7() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>90</h1>
+                    <h1>91</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>

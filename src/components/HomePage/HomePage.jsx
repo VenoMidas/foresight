@@ -25,8 +25,8 @@ function HomePage() {
               <th>Add to Dashboard</th>
             </tr>
             <tr>
-              <td>Cyle Dressel</td>
-              <td>Dress Barn</td>
+              <td>Meaghan Reinschmidt, Brianna Oliveira</td>
+              <td>Taco Ventures</td>
               <td>08/26/2022 11:00</td>
               <td>Low</td>
               <td>

@@ -68,7 +68,7 @@ function MvpReport() {
                       backgroundColor: '#5CF2CB',
                     }}
                   >
-                    <h1>96</h1>
+                    <h1>94</h1>
                     <p>Score</p>
                   </Box>
                 </CardContent>
@@ -120,19 +120,19 @@ function MvpReport() {
                     <u>Overview</u>
                   </h3>
                   <p>
-                    Company: <strong>Dress Barn</strong>
+                    Company: <strong>Taco Ventures</strong>
                   </p>
                   <p>
-                    Founder(s): <strong>Cyle Dressel</strong>
+                    Founder(s): <strong>Meaghan Reinschmidt, Brianna Oliveira</strong>
                   </p>
                   <p>
-                    Industries: <strong>Sales</strong>
+                    Industries: <strong>Food</strong>
                   </p>
                   <p>
-                    Headquarter Location: <strong> Mahwah, NJ</strong>
+                    Headquarter Location: <strong>Maple Grove, MN</strong>
                   </p>
                   <p>
-                    Website: <strong>www.dressbarn.com</strong>
+                    Website: <strong>www.tacoventures.com</strong>
                   </p>
                 </CardContent>
               </Card>

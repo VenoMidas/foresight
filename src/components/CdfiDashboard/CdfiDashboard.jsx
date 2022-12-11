@@ -78,9 +78,9 @@ function CdfiDashboard() {
             <th>Action</th>
           </tr>
           <tr>
-            <td>Cyle Dressel</td>
-            <td>cd@gmail.com</td>
-            <td>Dress Barn</td>
+            <td>Meaghan Reinschmidt, Brianna Oliveira</td>
+            <td>tacoventures@gmail.com</td>
+            <td>Taco Ventures</td>
             <td>Excellent Selection</td>
             <td>
               <Button style={{ color: '#0c3d50' }}>Contact</Button>
