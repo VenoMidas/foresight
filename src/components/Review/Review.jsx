@@ -17,7 +17,7 @@ const Review = () => {
                     <br />
                     <br />
                     <h1 sx={{ color: '#0c3d50' }}>#Submit to complete your form!</h1>
-                    <p>After submitting your form, you will access to your new account!</p>
+                    <p>After submitting your form, you will have access to your new account.</p>
                     <Button onClick={() => history.push('/ip/legal')} color="error">Back</Button>
                     <Button style={{ color: '#0c3d50' }}>Submit</Button>
                 </Box>
