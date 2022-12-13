@@ -16,10 +16,10 @@ const Review = () => {
                     <ProgressBar step={6} />
                     <br />
                     <br />
-                    <h1 sx={{ color: '#0c3d50' }}>#Submit to complete your form!</h1>
+                    <h1 sx={{ color: '#0c3d50' }}>#Submit to view your dashboard!</h1>
                     <p>After submitting your form, you will have access to your new account.</p>
                     <Button onClick={() => history.push('/ip/legal')} color="error">Back</Button>
-                    <Button style={{ color: '#0c3d50' }}>Submit</Button>
+                    <Button onClick={() => history.push('/founder/profile/:id')} style={{ color: '#0c3d50' }}>Submit</Button>
                 </Box>
                 <br />
                 <br />

@@ -41,7 +41,7 @@ function HomePage() {
                 </Button>
               </td>
               <td>
-                <Button style={{ color: '#0c3d50' }}>ADD</Button>
+                <Button onClick={() => history.push('/cdfidashboard')} style={{ color: '#0c3d50' }}>ADD</Button>
               </td>
             </tr>
             <tr>
